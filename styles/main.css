@@ -1,22 +1,21 @@
-@import url(../styles/style-general.css);
+@import url(./style-general.css);
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-main{
-   display: flex;
-   flex-direction: column;
+main {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     text-align: center;
-    background-color: rgb(132, 46, 167);   
+    background-color: var(--color-blanco);   
 }
 
-
-/*Todo lo relacionado a las peliculas en general*/
-.grid-container{
+/* Contenedor general de películas */
+.grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 700px;
@@ -25,56 +24,109 @@ main{
     gap: 40px;
 }
 
-.pelicula{
+.pelicula {
     width: 100%;
-    height:100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
+}
 
-    img{
+.pelicula img {
+    width: 80%;
+    height: 100%;
+}
+
+/* Películas más populares */
+.popular-movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50rem;
+    gap: 40px;
+    margin: 20px 20px;
+    height: 100%;
+}
+
+.popular-movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Esto asegura que el contenido ocupe todo el alto disponible */
+    background: var(--color-principal);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100%;
+}
+
+.popular-image {
+    width: 100%;
+    height: 85%;
+}
+
+/* Películas por género */
+.genre-section {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.genre-section h2 {
+    text-align: center;
+    width: 100%;
+}
+
+.genre-movies {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.genre-movie {
+    width: 200px;
+    text-align: center;
+}
+
+.genre-movie img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Pantallas medianas (tablets, entre 768px y 1024px) */
+@media (max-width: 1024px) {
+    .grid-container,
+    .popular-movies {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+}
+
+/* Pantallas pequeñas (móviles, menos de 768px) */
+@media (max-width: 768px) {
+    .grid-container,
+    .popular-movies {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 15px;
+    }
+
+    .genre-movies {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .genre-movie {
         width: 80%;
-        height: 100%;
     }
 }
 
 
-
-/*Donde estan las peliculas mas populares*/
-.popular-movies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.movie {
-    width: 200px;
-    text-align: center;
-}
-
-.movie img {
-    width: 100%;
-    border-radius: 10px;
+@media (width > 1450px){
+    .popular-movie{
+        height: 50rem;
+    }
 }
 
 
-.genre-section {
-    margin-top: 40px;
-  }
-  .genre-section h2 {
-    text-align: center;
-    width: 100%;
-  }
-  .genre-movies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  .movie {
-    width: 200px;
-    text-align: center;
-  }
-  .movie img {
-    width: 100%;
-    border-radius: 10px;

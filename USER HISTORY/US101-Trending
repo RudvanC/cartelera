@@ -1,0 +1,13 @@
+Código: HU-01
+Titulo: Mostrar las películas más populares (Trending)
+Descripción:
+        "CÓMO": "usuario del servicio de streaming CineFlix",
+        "QUIERO": "ver una lista de las películas más populares de forma destacada, con su título, poster y una breve descripción",
+        "PARA": "poder conocer las películas que están siendo más vistas en el servicio de streaming"
+Requisitos:
+        - Consumir la API de TheMovieDB para obtener las películas "trending"
+        - Mostrar al menos 3 películas con el título, descripción y cartel
+        - Las películas deben estar enlazadas a una página con más detalles
+        - El diseño debe ser responsivo y adaptable a diferentes tamaños de pantalla
+Notas: Sección principal de la página de inicio
+Asignado: Nicolas 

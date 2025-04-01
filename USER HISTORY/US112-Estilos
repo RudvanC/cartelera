@@ -1,0 +1,14 @@
+Código: HU-12
+Titulo: Implementación de estilo visual y CSS
+Descripción:
+        "CÓMO": "desarrollador frontend del equipo CineFlix",
+        "QUIERO": "implementar los estilos CSS basados en la guía de estilo",
+        "PARA": "lograr una interfaz visualmente atractiva y coherente con la identidad de CineFlix"
+Requisitos:
+        - Implementar los estilos definidos en el prototipo de alta fidelidad (HU-06)
+        - Utilizar CSS moderno con flexbox y grid para layouts responsivos
+        - Crear componentes reutilizables (cards de película, botones, etc.)
+        - Implementar animaciones y transiciones para mejorar la experiencia de usuario
+        - Asegurar que los estilos funcionen correctamente en diferentes navegadores
+Notas: Considerar el uso de preprocesadores como SASS si es conveniente para el proyecto
+Asignado: Leire 

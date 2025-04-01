@@ -1,0 +1,14 @@
+Código: HU-04
+Titulo: Ver detalles de una película
+Descripción:
+        "CÓMO": "usuario del servicio de streaming CineFlix",
+        "QUIERO": "acceder a una página con detalles completos de una película",
+        "PARA": "obtener información más detallada sobre su trama, reparto y otros datos relevantes"
+Requisitos:
+        - Crear una página de detalles que se muestre al hacer clic en una película desde cualquier sección
+        - Mostrar el título, cartel, descripción completa, duración, reparto, fecha de estreno, etc.
+        - Consumir la API de TheMovieDB para obtener información detallada de la película
+        - El diseño debe ser limpio y organizado para que toda la información sea fácil de leer
+        - Incluir un botón para regresar a la página principal
+Notas: Esta página debe mantener el estilo visual coherente con el resto del sitio
+Asignado: Rudvan 

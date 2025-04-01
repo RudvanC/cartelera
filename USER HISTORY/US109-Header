@@ -1,0 +1,14 @@
+Código: HU-09
+Titulo: Header y navegación
+Descripción:
+        "CÓMO": "usuario del servicio de streaming CineFlix",
+        "QUIERO": "tener una barra de navegación clara en todas las páginas",
+        "PARA": "poder moverme fácilmente entre las diferentes secciones del sitio"
+Requisitos:
+        - Crear un header con el logo de CineFlix y enlaces principales
+        - Implementar un diseño responsive que se adapte a diferentes dispositivos
+        - Incluir el campo de búsqueda integrado en el header (vinculado a HU-03)
+        - En dispositivos móviles, implementar un menú hamburguesa que despliegue las opciones
+        - Mantener consistencia visual con la guía de estilo (HU-06)
+Notas: El header debe aparecer en todas las páginas incluyendo la de detalles
+Asignado: Rudvan 

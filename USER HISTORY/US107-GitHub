@@ -1,0 +1,14 @@
+Código: HU-07
+Titulo: Publicar el código en GitHub
+Descripción:
+        "CÓMO": "desarrollador frontend del equipo CineFlix",
+        "QUIERO": "configurar y mantener un repositorio en GitHub para el proyecto",
+        "PARA": "facilitar la colaboración del equipo y el control de versiones"
+Requisitos:
+        - Crear un repositorio en GitHub con estructura adecuada y permisos para los miembros del equipo
+        - Organizar el código del proyecto en directorios lógicos (assets, styles, scripts)
+        - Incluir un archivo README.md completo con instrucciones de instalación y ejecución
+        - Configurar GitHub Pages o similar para tener una versión live del proyecto
+        - Documentar el enlace a la versión en vivo en el README.md
+Notas: Basado en el repositorio ya iniciado por Rudvan (https://github.com/RudvanC/cartelera.git)
+Asignado: Nicolas 

@@ -41,11 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = '';
       movies.slice(0, limit).forEach(movie => {
         const movieElement = document.createElement('div');
-        movieElement.classList.add('movie');
+        movieElement.classList.add('genre-movie');
         movieElement.innerHTML = `
           <img src="${IMAGE_BASE_URL}${movie.poster_path}" alt="${movie.title}">
           <h3>${movie.title}</h3>
           <p>⭐ ${movie.vote_average.toFixed(1)}</p>
+           <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank" rel="noopener noreferrer" onclick="console.log('Clic en Ver Más: https://www.themoviedb.org/movie/${movie.id}')">Ver más</a>
         `;
         container.appendChild(movieElement);
       });
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function renderGenresSections() {
         const genres = await fetchGenres();
         // Limitar a 3 géneros
-        const limitedGenres = genres.slice(0, 5);
+        const limitedGenres = genres.slice(6, 11);
         const genresContainer = document.getElementById('genres');
         if (!genresContainer) {
           console.error("No se encontró el contenedor con id 'genres'");
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Obtener y renderizar películas para este género (por ejemplo, 5 películas)
           const movies = await fetchMoviesByGenre(genre.id);
-          renderMovies(movies, document.getElementById(`genre-${genre.id}`), 4);
+          renderMovies(movies, document.getElementById(`genre-${genre.id}`), 5);
         }
       }
 

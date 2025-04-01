@@ -1,0 +1,14 @@
+Código: HU-05
+Titulo: Crear prototipo de baja fidelidad
+Descripción:
+        "CÓMO": "diseñador del servicio de streaming CineFlix",
+        "QUIERO": "crear un prototipo de baja fidelidad de la interfaz de usuario",
+        "PARA": "tener una base visual sobre la cual trabajar antes de crear el prototipo de alta fidelidad"
+Requisitos:
+        - Crear un prototipo visual en papel o herramienta de diseño que incluya las principales secciones
+        - Definir la disposición de los elementos (navegación, carruseles, tarjetas de películas, etc.)
+        - Incluir bocetos para la página principal, secciones de género y página de detalles
+        - Considerar diferentes tamaños de pantalla (móvil, tablet, escritorio)
+        - El prototipo debe comunicar claramente el flujo de navegación por la aplicación
+Notas: Debe ser presentado y aprobado por el equipo antes de avanzar al prototipo de alta fidelidad
+Asignado: Leire 

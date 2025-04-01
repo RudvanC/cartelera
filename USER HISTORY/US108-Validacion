@@ -1,0 +1,14 @@
+Código: HU-08
+Titulo: Validar el código HTML
+Descripción:
+        "CÓMO": "desarrollador frontend del equipo CineFlix",
+        "QUIERO": "asegurarme de que el código HTML esté validado según estándares web",
+        "PARA": "garantizar que el sitio sea accesible y funcional en todos los navegadores"
+Requisitos:
+        - Usar el validador de W3C (https://validator.w3.org/) para comprobar todo el HTML
+        - Asegurarse de que todos los tags estén correctamente abiertos y cerrados
+        - Verificar que los atributos utilizados sean válidos y estén correctamente aplicados
+        - Corregir cualquier error o advertencia indicada por el validador
+        - Documentar el proceso de validación en el README del proyecto
+Notas: Esta validación debe realizarse antes de cada release importante
+Asignado: Todos 

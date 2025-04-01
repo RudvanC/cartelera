@@ -1,0 +1,14 @@
+Código: HU-06
+Titulo: Crear prototipo de alta fidelidad y guía de estilo
+Descripción:
+        "CÓMO": "diseñador del servicio de streaming CineFlix",
+        "QUIERO": "crear un prototipo de alta fidelidad utilizando herramientas como Figma o Pentpot",
+        "PARA": "tener un diseño visual completo y consistente que guíe el desarrollo"
+Requisitos:
+        - Crear un prototipo visual interactivo que simule la navegación real de la página
+        - Desarrollar la identidad visual completa de CineFlix, incluyendo el logotipo
+        - Crear una guía de estilo que especifique colores, tipografía, iconografía, márgenes, etc.
+        - Asegurarse de que el diseño sea responsive y se adapte a dispositivos móviles y escritorios
+        - Preparar assets visuales para que los desarrolladores puedan implementarlos
+Notas: Basarse en el prototipo de baja fidelidad aprobado por el equipo
+Asignado: Leire 

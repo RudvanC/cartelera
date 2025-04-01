@@ -1,0 +1,13 @@
+Código: HU-04
+Título: Ver detalles de una película
+Descripción:
+
+  Como usuario,
+  Quiero acceder a una página con detalles completos de una película,
+  Para obtener información más detallada sobre su trama, reparto y otros datos relevantes.
+
+Requisitos:
+  Crear una página de detalles que se muestre al hacer clic en una película desde la vista general o búsqueda.
+  Mostrar el título, cartel, descripción completa, duración, reparto, fecha de estreno, etc.
+  El diseño debe ser limpio y organizado para que toda la información sea fácil de leer.
+

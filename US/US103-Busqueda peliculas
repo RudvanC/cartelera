@@ -1,0 +1,14 @@
+Código: US103
+Título: Búsqueda de películas por título
+Descripción:
+
+  Como usuario,
+  Quiero tener una barra de búsqueda donde pueda escribir el nombre de una película,
+  Para poder encontrar y ver detalles de películas específicas dentro del catálogo.
+
+Requisitos:
+
+  Implementar un campo de búsqueda en la página principal.
+  Consumir la API de TheMovieDB para obtener resultados de búsqueda en tiempo real.
+  Mostrar los resultados de la búsqueda con el título, cartel y enlace a los detalles de cada película.
+  Asegurarse de que la búsqueda sea interactiva y actualice los resultados mientras el usuario escribe.

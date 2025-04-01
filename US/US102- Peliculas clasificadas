@@ -1,0 +1,13 @@
+Código: HU-02
+Título: Mostrar películas clasificadas por género
+Descripción:
+  Como usuario,
+  Quiero ver películas clasificadas por género, con el título, poster y un enlace a su detalle,
+  Para poder explorar diferentes categorías de películas que me interesen.
+
+Requisitos:
+  Consumir la API de TheMovieDB para obtener las películas por género.
+  Mostrar 3 géneros diferentes seleccionables por el usuario.
+  Para cada género, mostrar varias películas con su título, cartel y enlace a más detalles.
+  Cada sección de género debe ser claramente identificada y filtrable.
+

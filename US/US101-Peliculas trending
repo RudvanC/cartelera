@@ -1,0 +1,13 @@
+Código: US101
+Título: Mostrar las películas más populares (Trending)
+Descripción:
+        
+  "Como" usuario,
+  "Quiero" ver una lista de las películas más populares de forma destacada, con su título, poster y una breve descripción,
+  "Para" poder conocer las películas que están siendo más vistas en el servicio de streaming.
+
+Requisitos:
+    Consumir la API de TheMovieDB para obtener las películas "trending".
+    Mostrar al menos 3 películas con el título, descripción y cartel.
+    Las películas deben estar enlazadas a una página con más detalles.
+    El diseño debe ser responsivo y adaptable a diferentes tamaños de pantalla.

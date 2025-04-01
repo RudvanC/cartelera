@@ -1,3 +1,4 @@
+
 function includeHTML(element, file) {
     fetch("../components/" + file) // 🔹 Subimos un nivel antes de acceder a "componentes"
         .then(response => response.text())
@@ -15,3 +16,5 @@ window.addEventListener("DOMContentLoaded", () => {
     includeHTML("main", "main.html");
     includeHTML("footer", "footer.html");
 });
+
+

@@ -1,9 +1,80 @@
 @import url(../styles/style-general.css);
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 main{
+   display: flex;
+   flex-direction: column;
+    width: 100vw;
+    text-align: center;
+    background-color: rgb(132, 46, 167);   
+}
+
+
+/*Todo lo relacionado a las peliculas en general*/
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 700px;
     width: 100vw;
     justify-content: center;
-    align-content: center;
-    text-align: center;
-    background-color: rgb(132, 46, 167);
+    gap: 40px;
 }
+
+.pelicula{
+    width: 100%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        width: 80%;
+        height: 100%;
+    }
+}
+
+
+
+/*Donde estan las peliculas mas populares*/
+.popular-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie {
+    width: 200px;
+    text-align: center;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.genre-section {
+    margin-top: 40px;
+  }
+  .genre-section h2 {
+    text-align: center;
+    width: 100%;
+  }
+  .genre-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .movie {
+    width: 200px;
+    text-align: center;
+  }
+  .movie img {
+    width: 100%;
+    border-radius: 10px;

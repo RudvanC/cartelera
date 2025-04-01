@@ -1,6 +1,9 @@
 :root{
-    --color-principal: #3498db;
-    --color-secundario: #2ecc71;
+    --color-principal: #8FA8D9;
+    --color-secundario: #115DBF;
+    --color-terciario: #154EBF;
+    --blanco:#F2F2F2;
+    --color-titulos:#0433BF;
     --fuente-principal: 'Arial', sans-serif;
     --tamaño-fuente: 16px;
   }

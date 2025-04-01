@@ -1,0 +1,14 @@
+Código: HU-11
+Titulo: Implementación de API TheMovieDB
+Descripción:
+        "CÓMO": "desarrollador frontend del equipo CineFlix",
+        "QUIERO": "implementar correctamente las llamadas a la API de TheMovieDB",
+        "PARA": "obtener y mostrar datos actualizados de películas en todas las secciones del sitio"
+Requisitos:
+        - Obtener una API key válida de TheMovieDB
+        - Crear funciones reutilizables para las diferentes llamadas a la API (trending, géneros, detalles, búsqueda)
+        - Implementar manejo de errores y estados de carga para mejorar la experiencia de usuario
+        - Investigar y resolver posibles problemas de CORS y Same-Origin Policy
+        - Documentar el uso de la API para el resto del equipo
+Notas: Este componente es esencial y debe completarse antes de las implementaciones de UI que dependen de datos
+Asignado: Nicolas 

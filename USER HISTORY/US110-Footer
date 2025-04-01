@@ -1,0 +1,14 @@
+Código: HU-10
+Titulo: Footer con información
+Descripción:
+        "CÓMO": "usuario del servicio de streaming CineFlix",
+        "QUIERO": "ver información sobre el sitio y sus creadores",
+        "PARA": "tener acceso a datos de contacto y enlaces relevantes"
+Requisitos:
+        - Crear un footer que aparezca en todas las páginas del sitio
+        - Incluir información de copyright y año actual
+        - Añadir enlaces a redes sociales ficticias de CineFlix
+        - Incluir sección "Acerca de" con información del proyecto y los creadores
+        - Mantener consistencia visual con la guía de estilo (HU-06)
+Notas: El footer debe ser responsive y adaptarse a diferentes tamaños de pantalla
+Asignado: Rudvan 

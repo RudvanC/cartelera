@@ -1,0 +1,13 @@
+:root{
+    --color-principal: #3498db;
+    --color-secundario: #2ecc71;
+    --fuente-principal: 'Arial', sans-serif;
+    --tamaño-fuente: 16px;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+

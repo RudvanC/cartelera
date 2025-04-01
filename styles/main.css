@@ -5,11 +5,15 @@
         padding: 0;
         box-sizing: border-box;
     }
+
+    html, body {
+        overflow-x: hidden; /* Desactiva el scroll horizontal */
+        width: 100vw; /* Asegura que el ancho de la página no sea mayor al 100% */
+    }
    
     main {
         display: flex;
         flex-direction: column;
-        width: 100vw;
         text-align: center;
         background-color: var(--color-blanco);   
         

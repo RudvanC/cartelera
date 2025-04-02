@@ -1,9 +1,13 @@
 @import url(../styles/style-general.css);
-
-header{
-    width: 100vw;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    background-color: rgb(50, 165, 22);
-}
+header {
+    display: flex;
+    justify-content: space-between; /* Ajusta la alineación, si tienes otros elementos */
+    align-items: center; /* Centra el logo verticalmente */
+    padding: 10px 20px; /* Ajusta el espaciado */
+    background-color: transparent; /* Cambia el color de fondo a transparente */
+  }
+  
+  .logo {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: auto; /* Mantén las proporciones de la imagen */
+  }

@@ -1,17 +1,19 @@
-function includeHTML(element, file) {
-    fetch("../components/" + file) // 🔹 Subimos un nivel antes de acceder a "componentes"
+function includeHTML(element, file, callback) {
+    fetch("./components/" + file) // Ajusta la ruta si es necesario
         .then(response => response.text())
         .then(data => {
             document.querySelector(element).innerHTML = data;
+            if (callback) callback();
         })
-        .catch(error => console.error("Error cargando " + file, error));
+        .catch(error => console.error("❌ Error cargando " + file, error));
 }
 
-// Cargar el header y el footer cuando se cargue la página
 window.addEventListener("DOMContentLoaded", () => {
     includeHTML("header", "header.html");
     includeHTML("nav", "nav.html");
-    includeHTML("aside", "aside.html");
-    includeHTML("main", "main.html");
+    includeHTML("main", "main.html", () => {
+        // Una vez que main.html se haya cargado, se cargan las películas
+        fetchPopularMovies();
+    });
     includeHTML("footer", "footer.html");
 });

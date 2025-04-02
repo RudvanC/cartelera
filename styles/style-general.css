@@ -1,7 +1,10 @@
 :root{
-    --color-principal: #3498db;
-    --color-secundario: #2ecc71;
-    --fuente-principal: 'Arial', sans-serif;
+    --color-principal:#F2C438;
+    --color-fondo: #2F3840;
+    --color-terciario: #D93B3B;
+    --blanco:#F2F2F2;
+    --color-titulos:#0D0D0D;
+    --fuente-principal: 'Montserrat', sans-serif;
     --tamaño-fuente: 16px;
   }
 
@@ -9,5 +12,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat/static/AnyConv.com__Montserrat-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 

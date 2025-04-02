@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  initGenreMovies();
+});
+
+function initGenreMovies() {
   // Configuración del token de autenticación y headers
   const BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDdiN2E2OWFiZjcyMDk1OWZlNGZlZmI0ZDk1NmIyZiIsIm5iZiI6MTc0MzUwODg3NC41Miwic3ViIjoiNjdlYmQ1OGFkOTk4MWZkYTE4N2FiMThiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.AFTSgit9VCyrI73TyetYSx-R25OF19oC1ICganpp4Lw';
   const HEADERS = {
@@ -79,4 +83,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Iniciar la renderización de secciones por género
   renderGenresSections();
-});
+}

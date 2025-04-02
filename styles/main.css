@@ -15,16 +15,17 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        background-color: var(--color-blanco);   
+        background-color: var(--color-fondo);   
         
         h1{
             display: flex;
             justify-content: flex-start;
-            color: var(--blanco);
+            color: var(--color-titulos);
             font-weight: bold;
             width: 100%;
-            background-color: var(--color-terciario);
+            background-color: var(--color-principal);
             padding: 15px;
+            font-family: var(--fuente-principal);
         }
     }
 
@@ -41,14 +42,15 @@
     }
 
     .popular-movie {
+        gap: 10px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Esto asegura que el contenido ocupe todo el alto disponible */
+        justify-content: space-between;
         background: var(--color-principal);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         height: 100%;
-        padding: 10px;
+        padding-bottom: 20px;
     }
 
     .popular-image {

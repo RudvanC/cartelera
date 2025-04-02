@@ -1,9 +1,9 @@
-@import url(../styles/style-general.css);
+@import url(./style-general.css);
 
 nav{
     width: 100vw;
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: var(--color-secundario);
+    background-color: var(--color-terciario);
 }

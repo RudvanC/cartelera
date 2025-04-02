@@ -1,9 +1,9 @@
-@import url(../styles/style-general.css);
+@import url(./style-general.css);
 
 header{
     width: 100vw;
     justify-content: center;
     align-content: center;
     text-align: center;
-    background-color: rgb(50, 165, 22);
+    background-color: var(--color-principal);
 }

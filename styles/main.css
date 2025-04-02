@@ -30,6 +30,12 @@
     }
 
 
+    a{
+        text-decoration: none;
+        font-family: var(--fuente-principal);
+        color: black;
+        height: 100%;
+    }
 
 
     /* Películas más populares */
@@ -50,7 +56,6 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         height: 100%;
-        padding-bottom: 20px;
     }
 
     .popular-image {
@@ -58,6 +63,79 @@
         height: 85%;
         border-radius: 11px;
     }
+
+    /* Contenedor del slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Ajustamos la altura */
+    overflow: hidden;
+}
+
+/* Slider */
+#slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide */
+.slide {
+    min-width: 100%;
+    height: 500px; /* Fijamos la altura */
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Imagen de fondo */
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+/* Información sobre la imagen */
+.slide-info {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 50%;
+}
+
+/* Botón Ver Más */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Botones de navegación */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.control-btn {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
 
 
 

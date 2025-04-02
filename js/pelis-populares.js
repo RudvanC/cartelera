@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="slide-info">
           <h3>${movie.title}</h3>
           <h4>⭐ ${movie.vote_average.toFixed(1)}</h4>
-          <p>${movie.overview.substring(0, 200)}...</p>
+          <p>${movie.overview.substring(0, 1000)}...</p>
           <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank" class="btn">Ver Más</a>
         </div>
       `;

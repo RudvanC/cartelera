@@ -20,6 +20,7 @@
         text-align: center;
         background-color: var(--color-fondo);
         position: relative;
+    
 
         h1 {
             position: absolute;
@@ -80,7 +81,6 @@
 
      /* Botones de navegación */
      .slider-controls {
-        padding: 20px;
         position: absolute;
         top: 50%;
         width: 100%;
@@ -174,29 +174,45 @@
 
    
     .control-btn {
-        background: rgba(0, 0, 0, 0.6);
+        background-color: transparent; /* Fondo semitransparente */
         color: white;
         border: none;
-        font-size: 24px;
-        padding: 10px;
+        font-size: 28px; /* Un poco más grande */
+        padding: 15px 20px; /* Más padding para mejor clickeabilidad */
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
     }
-
+    
+    /* Efecto al pasar el mouse */
+    .control-btn:hover {
+        background-color: transparent;
+        color: #fff;
+        transform: scale(1.2); /* Efecto de crecimiento */
+    }
+    
 
 
     /* Películas por género */
     .genre-section {
         margin-top: 40px;
         width: 100%;
-    }
 
-    .genre-section h2 {
-        text-align: center;
-        width: 100%;
+        h2 {
+            font-size: xxx-large;
+            padding: 30px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-family: var(--fuente-principal);
+        }
+
+        p{
+            color: white;
+        }
     }
+    
 
     .genre-movies {
-        margin-top: 40px;
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
@@ -206,6 +222,10 @@
     .genre-movie {
         width: 200px;
         text-align: center;
+
+        h3{
+            color: white;
+        }
     }
 
     .genre-movie img {

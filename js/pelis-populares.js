@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  const MOVIES_LIMIT = 5;
+
 
   async function fetchPopularMovies() {
     try {
@@ -29,22 +29,26 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("❌ No se encontró el contenedor con id 'slider'");
       return;
     }
-    
+
     container.innerHTML = '';
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w1280';
+
+    const MOVIES_LIMIT = 5;
     const moviesToShow = movies.slice(0, MOVIES_LIMIT);
 
     moviesToShow.forEach((movie) => {
       const movieElement = document.createElement('div');
       movieElement.classList.add('slide');
       movieElement.innerHTML = `
+      <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank">  
         <img class="slide-image" src="${IMAGE_BASE_URL}${movie.backdrop_path}" alt="${movie.title}">
-        <div class="slide-info">
-          <h3>${movie.title}</h3>
-          <h4>⭐ ${movie.vote_average.toFixed(1)}</h4>
-          <p>${movie.overview.substring(0, 1000)}...</p>
-          <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank" class="btn">Ver Más</a>
-        </div>
+          <div class="slide-info">
+            <h3>${movie.title}</h3>
+            <h4>⭐ ${movie.vote_average.toFixed(1)}</h4>
+            <p>${movie.overview.substring(0, 1000)}...</p>
+            <p>Fecha de lanzamiento "${movie.release_date}"</p>
+          </div>
+      </a>
       `;
       container.appendChild(movieElement);
     });

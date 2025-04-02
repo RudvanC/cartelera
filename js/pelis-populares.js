@@ -33,11 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const movieElement = document.createElement('div');
         movieElement.classList.add('popular-movie');
         movieElement.innerHTML = `
-          <img class="popular-image" src="${IMAGE_BASE_URL}${movie.poster_path}" alt="${movie.title}">
+        <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank" rel="noopener noreferrer" onclick="console.log('Clic en Ver Más: https://www.themoviedb.org/movie/${movie.id}')"> 
+        <img class="popular-image" src="${IMAGE_BASE_URL}${movie.poster_path}" alt="${movie.title}">
           <h3>${movie.title}</h3>
           <h4>⭐ ${movie.vote_average.toFixed(1)}</h4
           <p>${movie.overview.substring(0, 200)}...</p>
-          <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank" rel="noopener noreferrer" onclick="console.log('Clic en Ver Más: https://www.themoviedb.org/movie/${movie.id}')">Ver más</a>
+          </a>
         `;
         container.appendChild(movieElement);
       });

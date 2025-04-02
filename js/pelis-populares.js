@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const API_URL = 'https://api.themoviedb.org/3/movie/popular?include_adult=false&language=en-US&page=1';
+  const API_URL = 'https://api.themoviedb.org/3/movie/popular?include_adult=false&language=es-US&page=1';
   const options = {
     method: 'GET',
     headers: {
-      'Authorization': 'Bearer TU_API_KEY', // Reemplaza con tu API Key
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDdiN2E2OWFiZjcyMDk1OWZlNGZlZmI0ZDk1NmIyZiIsIm5iZiI6MTc0MzUwODg3NC41Miwic3ViIjoiNjdlYmQ1OGFkOTk4MWZkYTE4N2FiMThiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.AFTSgit9VCyrI73TyetYSx-R25OF19oC1ICganpp4Lw', // Reemplaza con tu API Key
       'accept': 'application/json'
     }
   };
 
-  const MOVIES_LIMIT = 5; // Cambia este número para mostrar la cantidad deseada de películas
+  const MOVIES_LIMIT = 5;
 
   async function fetchPopularMovies() {
     try {
@@ -25,6 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showMovies(movies) {
     const container = document.getElementById('slider');
+    if (!container) {
+      console.error("❌ No se encontró el contenedor con id 'slider'");
+      return;
+    }
+    
     container.innerHTML = '';
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w1280';
     const moviesToShow = movies.slice(0, MOVIES_LIMIT);
@@ -49,12 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function initSlider() {
     const sliderContainer = document.getElementById("slider");
+    if (!sliderContainer) {
+      console.error("❌ No se encontró el contenedor con id 'slider'");
+      return;
+    }
+
     const slides = document.querySelectorAll(".slide");
     const totalSlides = slides.length;
     let currentIndex = 0;
 
     function showSlide(index) {
-      // Se traslada el contenedor para mostrar el slide deseado
       sliderContainer.style.transform = `translateX(-${index * 100}%)`;
     }
 
@@ -68,16 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
       showSlide(currentIndex);
     }
 
-    // Eventos para controles manuales
     document.getElementById("prev").addEventListener("click", prevSlide);
     document.getElementById("next").addEventListener("click", nextSlide);
 
-    // Cambio automático cada 8 segundos
     setInterval(nextSlide, 3000);
-
-    // Mostrar el primer slide
     showSlide(currentIndex);
   }
 
+  window.fetchPopularMovies = fetchPopularMovies; // Hace la función accesible globalmente
   fetchPopularMovies();
 });

@@ -6,35 +6,37 @@
         box-sizing: border-box;
     }
 
-    html, body {
-        overflow-x: hidden; /* Desactiva el scroll horizontal */
-        width: 100vw; /* Asegura que el ancho de la página no sea mayor al 100% */
+    html,
+    body {
+        overflow-x: hidden;
+        /* Desactiva el scroll horizontal */
+        width: 100vw;
+        /* Asegura que el ancho de la página no sea mayor al 100% */
     }
-   
+
     main {
         display: flex;
         flex-direction: column;
         text-align: center;
-        background-color: var(--color-fondo);   
-        
-        h1{
+        background-color: var(--color-fondo);
+
+        h1 {
             display: flex;
             justify-content: flex-start;
             color: var(--color-titulos);
             font-weight: bold;
             width: 100%;
-            background-color: var(--color-principal);
+            background-color: transparent;
             padding: 15px;
             font-family: var(--fuente-principal);
         }
     }
 
 
-    a{
+    a {
         text-decoration: none;
         font-family: var(--fuente-principal);
         color: black;
-        height: 100%;
     }
 
 
@@ -65,77 +67,115 @@
     }
 
     /* Contenedor del slider */
-.slider-container {
-    position: relative;
-    width: 100%;
-    height: 500px; /* Ajustamos la altura */
-    overflow: hidden;
-}
+    .slider-container {
+        position: relative;
+        width: 100%;
+        height: 500px;
+        /* Ajustamos la altura */
+        overflow: hidden;
+    }
 
-/* Slider */
-#slider {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
+    /* Slider */
+    #slider {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+    }
 
-/* Cada slide */
-.slide {
-    min-width: 100%;
-    height: 500px; /* Fijamos la altura */
-    position: relative;
-    transition: transform 0.5s ease-in-out;
-}
+    /* Cada slide */
+    .slide {
+        min-width: 100%;
+        height: 500px;
+        /* Fijamos la altura */
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+    }
 
-/* Imagen de fondo */
-.slide-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-}
+    /* Imagen de fondo */
+    .slide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ajusta la imagen sin deformarla */
+    }
 
-/* Información sobre la imagen */
-.slide-info {
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 50%;
-}
+    /* Información sobre la imagen */
+    /* Información sobre la imagen (ocupa todo el slide) */
+    .slide-info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* Ahora cubre todo el slide */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        /* Alinea el texto abajo */
+        padding: 40px 10px 20px 80px;
+        gap: 30px;
+        color: white;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+        /* Degradado */
+        box-sizing: border-box;
 
-/* Botón Ver Más */
-.btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: red;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+        h3 {
+            width: 100%;
+            text-align: start;
+            font-size: 60px;
+        }
 
-/* Botones de navegación */
-.slider-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
+        h4{
+            width: 100%;
+            text-align: start;
+            font-size: 30px;
+        }
 
-.control-btn {
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-}
+        p{
+            width: 100%;
+            text-align: start;
+            font-size: 20px;
+        }
+
+
+        
+    }
+
+    /* Botón Ver Más */
+    .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: rgb(66, 61, 61);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        width: 20%;
+        border-radius: 20px;
+        font-family: var(--fuente-principal);
+        font-weight: bold;
+
+    }
+
+    /* Botones de navegación */
+    .slider-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+    }
+
+    .control-btn {
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        font-size: 24px;
+        padding: 10px;
+        cursor: pointer;
+    }
 
 
 
@@ -167,10 +207,3 @@
         width: 100%;
         border-radius: 10px;
     }
-
-
-
-   
-
- 
-

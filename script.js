@@ -12,7 +12,7 @@ function includeHTML(element, file, callback) {
 }
 window.addEventListener("DOMContentLoaded", () => {
     includeHTML("header", "header.html");
-    includeHTML("nav", "nav.html");
+    includeHTML("#search-container", "nav.html");
  
  
     // Carga el main y luego ejecuta los scripts cuando los elementos existan

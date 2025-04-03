@@ -66,6 +66,10 @@ function initSearchBar() {
                     </div>
                 `).join('')}
             </div>`;
+
+        // Cuando se realiza una búsqueda
+        document.querySelector('main').classList.add('hidden');
+        document.querySelector('.search-results').classList.add('active');
     }
 
     // Event listeners

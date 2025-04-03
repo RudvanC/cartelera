@@ -45,7 +45,7 @@ function includeHTML(element, file, callback) {
   // Esperar a que el DOM esté listo
   window.addEventListener("DOMContentLoaded", () => {
     // Cargar componentes de forma dinámica
-    includeHTML("#header-content", "header.html", () => {
+    includeHTML("#header", "header.html", () => {
       console.log("✅ header.html cargado");
       initHeader(); // Inicializa el header después de cargarlo
     });

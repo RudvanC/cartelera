@@ -1,0 +1,40 @@
+
+.hamburger-menu {
+    position: relative;
+}
+
+.menu-toggle {
+    background: red;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+.menu-list li {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.menu-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-list.hidden {
+    display: none;
+}
+
+.menu-list.visible {
+    display: block;
+}

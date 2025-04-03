@@ -1,9 +1,45 @@
 @import url(.);
 
-footer{
-    width: 100vw;
-    justify-content: center;
-    align-content: center;
+/* General footer styling */
+footer {
+    background-color: #222;
+    color: #fff;
     text-align: center;
-    background-color: aqua;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Social media links */
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #f39c12;
+}
+
+/* Contact section */
+footer .contact a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+footer .contact a:hover {
+    text-decoration: underline;
+}
+
+/* Privacy policy link */
+footer .privacy a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer .privacy a:hover {
+    color: #f39c12;
+    text-decoration: underline;
 }

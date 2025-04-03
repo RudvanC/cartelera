@@ -1,4 +1,5 @@
-@import url(../styles/style-general.css);
+@import url(./style-general.css);
+
 header {
     display: flex;
     justify-content: space-between; /* Ajusta la alineación, si tienes otros elementos */
@@ -8,6 +9,6 @@ header {
   }
   
   .logo {
-    height: 150px; /* Ajusta el tamaño del logo */
+    height: 95px; /* Ajusta el tamaño del logo */
     width: auto; /* Mantén las proporciones de la imagen */
   }

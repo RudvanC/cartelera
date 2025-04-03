@@ -24,7 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const response = await fetch('../components/header.html');
         const html = await response.text();
-        document.querySelector('.header header').innerHTML = html;
+        const headerContainer = document.querySelector('.header header');
+        headerContainer.innerHTML = html;
+
+        // Reconfigurar eventos después de cargar el header
+        setupHamburgerMenu();
+        await loadGenresIntoMenu();
       } catch (error) {
         console.error('Error al cargar el header:', error);
       }
@@ -48,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function loadGenresIntoMenu() {
       try {
         const genres = await fetchGenres();
-        const limitedGenres = genres.slice(0, 3); // Limitamos a 3 géneros como pediste
+        const limitedGenres = genres.slice(0, 5); // Limitamos a 3 géneros como pediste
         const menuList = document.getElementById('menu-list');
         
         if (!menuList) {

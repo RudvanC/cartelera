@@ -1,9 +1,61 @@
-@import url(./style-general.css);
+@import url(../styles/style-general.css);
 
-nav{
-    width: 100vw;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    background-color: var(--color-terciario);
+
+nav {
+    background-color: transparent;
+    padding: 1rem 2rem;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .search-container {
+        margin: 1rem 0;
+        max-width: 100%;
+    }
 }

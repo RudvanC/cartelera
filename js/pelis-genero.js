@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDdiN2E2OWFiZjcyMDk1OWZlNGZlZmI0ZDk1NmIyZiIsIm5iZiI6MTc0MzUwODg3NC41Miwic3ViIjoiNjdlYmQ1OGFkOTk4MWZkYTE4N2FiMThiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.AFTSgit9VCyrI73TyetYSx-R25OF19oC1ICganpp4Lw'; // Reemplaza con tu token real
-    const HEADERS = {
+  initGenreMovies();
+});
+
+function initGenreMovies() {
+  // Configuración del token de autenticación y headers
+  const BEARER_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNDdiN2E2OWFiZjcyMDk1OWZlNGZlZmI0ZDk1NmIyZiIsIm5iZiI6MTc0MzUwODg3NC41Miwic3ViIjoiNjdlYmQ1OGFkOTk4MWZkYTE4N2FiMThiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.AFTSgit9VCyrI73TyetYSx-R25OF19oC1ICganpp4Lw';
+  const HEADERS = {
       'accept': 'application/json',
       'Authorization': `Bearer ${BEARER_TOKEN}`
     };
@@ -76,9 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const movies = await fetchMoviesByGenre(genre.id);
         renderMovies(movies, document.getElementById(`genre-${genre.id}`), 7);
       }
-    }
-  
-    window.renderGenresSections = renderGenresSections; // Hace la función accesible globalmente
-    renderGenresSections();
-  });
-  
+  }
+
+  // Iniciar la renderización de secciones por género
+  renderGenresSections();
+}

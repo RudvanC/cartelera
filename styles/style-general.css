@@ -1,9 +1,9 @@
 :root{
-    --color-principal:#F2C438;
+    --color-principal:black;
     --color-fondo: #0e0d0e;
     --color-terciario: #D93B3B;
-    --blanco:#F2F2F2;
-    --color-titulos:#0D0D0D;
+    --blanco:#bba8a8;
+    --color-titulos:white;
     --fuente-principal: 'Montserrat', sans-serif;
     --tamaño-fuente: 16px;
   }

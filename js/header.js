@@ -12,6 +12,22 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Cargar el header
     await loadHeader();
+
+    // Modificar el comportamiento de scroll para centrar verticalmente
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="#genre-"]');
+      if (link) {
+      const targetId = link.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        event.preventDefault();
+        const offset = targetElement.getBoundingClientRect().top + window.scrollY;
+        const centerOffset = offset - (window.innerHeight / 2) + (targetElement.offsetHeight / 2);
+        window.scrollTo({ top: centerOffset, behavior: 'smooth' });
+      }
+      }
+    });
     
     // Configurar el menú hamburguesa
     setupHamburgerMenu();

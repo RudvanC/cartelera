@@ -10,21 +10,43 @@ function includeHTML(element, file, callback) {
         })
         .catch(error => console.error(`❌ Error cargando ${file}`, error));
 }
-
 window.addEventListener("DOMContentLoaded", () => {
-    // Cargar componentes en orden
-    includeHTML("header", "header.html", () => {
-        includeHTML("nav", "nav.html", () => {
-            includeHTML("main", "main.html", () => {
-                // Inicializar scripts solo después de que el DOM esté listo
-                if (typeof initSearchBar === 'function') initSearchBar();
-                if (typeof initPopularMovies === 'function') initPopularMovies();
-                if (typeof initGenreMovies === 'function') initGenreMovies();
-            });
+    includeHTML("header", "header.html");
+    includeHTML("nav", "nav.html");
+ 
+ 
+    // Carga el main y luego ejecuta los scripts cuando los elementos existan
+    includeHTML("main", "main.html", () => {
+        console.log("✅ main.html cargado");
+
+         // Inicializar scripts solo después de que el DOM esté listo
+         if (typeof initSearchBar === 'function') initSearchBar();
+         if (typeof initPopularMovies === 'function') initPopularMovies();
+         if (typeof initGenreMovies === 'function') initGenreMovies();
+     });
+ 
+ 
+        loadScript("../js/pelis-populares.js", () => {
+            console.log("✅ pelis-populares.js cargado");
+            retryFunction(fetchPopularMovies, "#slider");
         });
+ 
+ 
+        loadScript("../js/pelis-genero.js", () => {
+            console.log("✅ pelis-genero.js cargado");
+            retryFunction(renderGenresSections, "#genres");
+        });
+        includeHTML("footer", "footer.html");
     });
-    includeHTML("footer", "footer.html");
-});
+ 
+ 
+    
+
+ 
+
+
+               
+     
 
 // Función para esperar que un elemento exista antes de ejecutar la función
 function retryFunction(fn, selector, attempts = 15, delay = 500) {

@@ -23,8 +23,7 @@ function initSearchBar() {
                 'accept': 'application/json',
                 'Authorization': API_KEY
             }
-        };
-
+        }; 
         try {
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=es-US&page=1`, options);
             const data = await response.json();
@@ -44,8 +43,7 @@ function initSearchBar() {
             searchResults.className = 'search-results';
             mainContent.insertBefore(searchResults, mainContent.firstChild);
         }
-
-        // Mostrar resultados
+// Mostrar resultados
         if (movies.length === 0) {
             searchResults.innerHTML = '<p class="no-results">No se encontraron películas</p>';
             return;
@@ -66,10 +64,6 @@ function initSearchBar() {
                     </div>
                 `).join('')}
             </div>`;
-
-        // Cuando se realiza una búsqueda
-        document.querySelector('main').classList.add('hidden');
-        document.querySelector('.search-results').classList.add('active');
     }
 
     // Event listeners

@@ -7,9 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
       'accept': 'application/json'
     }
   };
-
-
-
+ 
+ 
+ 
+ 
+ 
+ 
   async function fetchPopularMovies() {
     try {
       const response = await fetch(API_URL, options);
@@ -22,35 +25,89 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error('Error al obtener las películas populares:', error);
     }
   }
-
-  function initPopularMovies() {
-    function showMovies(movies) {
-        const container = document.getElementById('popular-movies');
-        if (!container) {
-            console.error('Popular movies container not found');
-            return;
-        }
-        container.innerHTML = ''; // Limpia el contenedor
-        const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
-        // Limita el array a las 3 primeras películas
-        const moviesToShow = movies.slice(0, 3);
-      
-        moviesToShow.forEach(movie => {
-          const movieElement = document.createElement('div');
-          movieElement.classList.add('popular-movie');
-          movieElement.innerHTML = `
-            <img class="popular-image" src="${IMAGE_BASE_URL}${movie.poster_path}" alt="${movie.title}">
+ 
+ 
+  function showMovies(movies) {
+    const container = document.getElementById('slider');
+    if (!container) {
+      console.error("❌ No se encontró el contenedor con id 'slider'");
+      return;
+    }
+ 
+ 
+    container.innerHTML = '';
+    const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w1280';
+ 
+ 
+    const MOVIES_LIMIT = 5;
+    const moviesToShow = movies.slice(0, MOVIES_LIMIT);
+ 
+ 
+    moviesToShow.forEach((movie) => {
+      const movieElement = document.createElement('div');
+      movieElement.classList.add('slide');
+      movieElement.innerHTML = `
+      <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank"> 
+        <img class="slide-image" src="${IMAGE_BASE_URL}${movie.backdrop_path}" alt="${movie.title}">
+          <div class="slide-info">
             <h3>${movie.title}</h3>
             <h4>⭐ ${movie.vote_average.toFixed(1)}</h4>
-            <p>${movie.overview.substring(0, 200)}...</p>
-            <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank" rel="noopener noreferrer" onclick="console.log('Clic en Ver Más: https://www.themoviedb.org/movie/${movie.id}')">Ver más</a>
-          `;
-          container.appendChild(movieElement);
-        });
-    }
-
-    fetchPopularMovies();
+            <p>${movie.overview.substring(0, 1000)}...</p>
+            <p>Fecha de lanzamiento "${movie.release_date}"</p>
+          </div>
+      </a>
+      `;
+      container.appendChild(movieElement);
+    });
+ 
+ 
+    initSlider();
   }
-
-  initPopularMovies();
-});
+ 
+ 
+  function initSlider() {
+    const sliderContainer = document.getElementById("slider");
+    if (!sliderContainer) {
+      console.error("❌ No se encontró el contenedor con id 'slider'");
+      return;
+    }
+ 
+ 
+    const slides = document.querySelectorAll(".slide");
+    const totalSlides = slides.length;
+    let currentIndex = 0;
+ 
+ 
+    function showSlide(index) {
+      sliderContainer.style.transform = `translateX(-${index * 100}%)`;
+    }
+ 
+ 
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }
+ 
+ 
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      showSlide(currentIndex);
+    }
+ 
+ 
+    document.getElementById("prev").addEventListener("click", prevSlide);
+    document.getElementById("next").addEventListener("click", nextSlide);
+ 
+ 
+    setInterval(nextSlide, 3000);
+    showSlide(currentIndex);
+  }
+ 
+ 
+  window.fetchPopularMovies = fetchPopularMovies; // Hace la función accesible globalmente
+  fetchPopularMovies();
+ });
+ 
+ 
+ 
+ 

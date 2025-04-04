@@ -68,8 +68,20 @@ async function initHeader() {
     const menuList = document.getElementById('menu-list');
 
     if (menuToggle && menuList) {
-      menuToggle.addEventListener('click', () => {
-        menuList.classList.toggle('hidden');
+      menuToggle.addEventListener('mouseenter', () => {
+        menuList.classList.remove('hidden');
+      });
+
+      menuToggle.addEventListener('mouseleave', () => {
+        menuList.classList.add('hidden');
+      });
+
+      menuList.addEventListener('mouseenter', () => {
+        menuList.classList.remove('hidden');
+      });
+
+      menuList.addEventListener('mouseleave', () => {
+        menuList.classList.add('hidden');
       });
     } else {
       console.error('❌ No se encontraron los elementos del menú hamburguesa');

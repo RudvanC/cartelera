@@ -55,6 +55,7 @@ function initSearchBar() {
             <h2>Resultados de la búsqueda</h2>
             <div class="movies-grid">
                 ${movies.map(movie => `
+                    <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank"> 
                     <div class="movie-card">
                         <img src="${movie.poster_path ? IMAGE_BASE_URL + movie.poster_path : '../assets/no-poster.png'}" 
                              alt="${movie.title}">
@@ -63,6 +64,7 @@ function initSearchBar() {
                             <p>⭐ ${movie.vote_average.toFixed(1)}</p>
                             <p>${movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}</p>
                         </div>
+                        </a>
                     </div>
                 `).join('')}
             </div>`;

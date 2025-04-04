@@ -1,9 +1,10 @@
-@import url(./styles/menu.css);
-@import url(./styles/resultados-busqueda.css);
-@import url(./styles/nav.css);
+@import url(./styles/footer.css);
 @import url(./styles/header.css);
 @import url(./styles/main.css);
-@import url(./styles/footer.css);
+@import url(./styles/menu.css);
+@import url(./styles/nav.css);
+@import url(./styles/resultados-busqueda.css);
+@import url(./styles/style-general.css);
 
 
 
@@ -43,4 +44,8 @@ body {
     position: absolute;
     z-index: 2;
     width: 100%;
+  }
+
+  #header-content{
+    display: flex;
   }

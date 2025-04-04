@@ -1,4 +1,5 @@
-@import url(../styles/style-general.css);
+@import url(./style-general.css);
+
 header {
     display: flex;
     justify-content: space-between; /* Ajusta la alineación, si tienes otros elementos */

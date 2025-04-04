@@ -2,14 +2,15 @@
 .search-results {
     background-color: var(--color-fondo);
     position: fixed;
-    top: 0;
+    top: 120px; /* Ajustamos para dejar espacio al header */
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1000;
+    height: calc(100% - 120px); /* Restamos el espacio del header */
+    z-index: 999; /* Reducimos el z-index para que esté debajo del header */
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto; /* Permitimos scroll si hay muchos resultados */
 }
 
 .search-results.active {
@@ -24,12 +25,30 @@
     padding: 20px;
 }
 
+.search-header {
+    display: none; /* Ocultamos el header de resultados */
+}
+
+.close-search {
+    background: none;
+    border: none;
+    color: var(--color-titulos);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: transform 0.2s ease;
+}
+
+.close-search:hover {
+    transform: scale(1.1);
+}
+
 .movies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
     padding: 20px;
-    margin-top: 80px;
+    margin-top: 20px; /* Reducimos el margen superior */
 }
 
 .movie-card {

@@ -6,6 +6,8 @@ header {
     align-items: center; /* Centra el logo verticalmente */
     padding: 10px 20px; /* Ajusta el espaciado */
     background-color: transparent; /* Cambia el color de fondo a transparente */
+    position: relative;
+    z-index: 1000; /* Aseguramos que el header esté por encima de los resultados */
   }
   
   .logo {

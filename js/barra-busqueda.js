@@ -35,7 +35,6 @@ function initSearchBar() {
     }
 
     function displaySearchResults(movies) {
-        // Crear contenedor de resultados si no existe
         let searchResults = document.getElementById('search-results');
         if (!searchResults) {
             searchResults = document.createElement('div');
@@ -43,46 +42,82 @@ function initSearchBar() {
             searchResults.className = 'search-results';
             mainContent.insertBefore(searchResults, mainContent.firstChild);
         }
-// Mostrar resultados
+
+        // Si no hay texto en el input, ocultar resultados
+        if (!searchInput.value.trim()) {
+            searchResults.classList.remove('active');
+            return;
+        }
+
+        // Activar visualización de resultados
+        searchResults.classList.add('active');
+
         if (movies.length === 0) {
-            searchResults.innerHTML = '<p class="no-results">No se encontraron películas</p>';
+            searchResults.innerHTML = `
+                <div class="search-header">
+                    <h2>Resultados de la búsqueda</h2>
+                    <button class="close-search">✕</button>
+                </div>
+                <p class="no-results">No se encontraron películas</p>`;
             return;
         }
 
         searchResults.innerHTML = `
-            <h2>Resultados de la búsqueda</h2>
+            <div class="search-header">
+                <h2>Resultados de la búsqueda</h2>
+                <button class="close-search">✕</button>
+            </div>
             <div class="movies-grid">
                 ${movies.map(movie => `
-                    <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank"> 
                     <div class="movie-card">
-                        <img src="${movie.poster_path ? IMAGE_BASE_URL + movie.poster_path : '../assets/no-poster.png'}" 
-                             alt="${movie.title}">
-                        <div class="movie-info">
-                            <h3>${movie.title}</h3>
-                            <p>⭐ ${movie.vote_average.toFixed(1)}</p>
-                            <p>${movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}</p>
-                        </div>
+                        <a href="https://www.themoviedb.org/movie/${movie.id}" target="_blank"> 
+                            <img src="${movie.poster_path ? IMAGE_BASE_URL + movie.poster_path : '../assets/no-poster.png'}" 
+                                 alt="${movie.title}">
+                            <div class="movie-info">
+                                <h3>${movie.title}</h3>
+                                <p>⭐ ${movie.vote_average.toFixed(1)}</p>
+                                <p>${movie.release_date ? new Date(movie.release_date).getFullYear() : 'N/A'}</p>
+                            </div>
                         </a>
                     </div>
                 `).join('')}
             </div>`;
+
+        // Agregar evento para cerrar resultados
+        const closeButton = searchResults.querySelector('.close-search');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => {
+                searchResults.classList.remove('active');
+                searchInput.value = '';
+            });
+        }
     }
 
     // Event listeners
-    searchInput.addEventListener('input', (e) => {
-        clearTimeout(timeoutId);
-        if (e.target.value.length >= 3) {
-            timeoutId = setTimeout(async () => {
-                const movies = await searchMovies(e.target.value);
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim().length >= 3) {
+            e.preventDefault();
+            searchMovies(searchInput.value.trim()).then(movies => {
                 displaySearchResults(movies);
-            }, 500);
+            });
         }
     });
 
     searchButton.addEventListener('click', async () => {
-        if (searchInput.value.length >= 3) {
-            const movies = await searchMovies(searchInput.value);
+        const query = searchInput.value.trim();
+        if (query.length >= 3) {
+            const movies = await searchMovies(query);
             displaySearchResults(movies);
+        }
+    });
+
+    // Removemos el listener de 'input' anterior y lo reemplazamos por uno más simple
+    searchInput.addEventListener('input', (e) => {
+        if (!e.target.value.trim()) {
+            const searchResults = document.getElementById('search-results');
+            if (searchResults) {
+                searchResults.classList.remove('active');
+            }
         }
     });
 }

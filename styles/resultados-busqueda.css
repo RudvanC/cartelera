@@ -2,10 +2,10 @@
 .search-results {
     background-color: var(--color-fondo);
     position: fixed;
-    top: 120px; /* Ajustamos para dejar espacio al header */
+    top: 0px; /* Ajustamos para dejar espacio al header */
     left: 0;
     width: 100%;
-    height: calc(100% - 120px); /* Restamos el espacio del header */
+    height: 100%; /* Restamos el espacio del header */
     z-index: 999; /* Reducimos el z-index para que esté debajo del header */
     opacity: 0;
     visibility: hidden;
@@ -48,7 +48,7 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
     padding: 20px;
-    margin-top: 20px; /* Reducimos el margen superior */
+    margin-top: 130px; /* Reducimos el margen superior */
 }
 
 .movie-card {

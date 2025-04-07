@@ -42,7 +42,7 @@ body {
     justify-content: space-between;
     background-color: transparent;
     position: absolute;
-    z-index: 2;
+    z-index: 1000;
     width: 100%;
   }
 

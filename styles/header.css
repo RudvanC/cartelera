@@ -8,9 +8,9 @@ header {
     background-color: transparent; /* Cambia el color de fondo a transparente */
     position: relative;
     z-index: 1000; /* Aseguramos que el header esté por encima de los resultados */
-  }
-  
-  .logo {
+}
+
+.logo {
     height: 95px; /* Ajusta el tamaño del logo */
     width: auto; /* Mantén las proporciones de la imagen */
-  }
+}

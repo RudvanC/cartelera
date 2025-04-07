@@ -1,24 +1,19 @@
-     <link rel="stylesheet" href="../styles/chatbot.css">
-    <script type="module" src="../js/chatbot-busqueda.js"></script>
+<link rel="stylesheet" href="../styles/chatbot.css">
 
+<!-- Botón para abrir el chatbot -->
+<button id="chat-toggle-button" class="chat-toggle">
+    <i class="fas fa-comment"></i> <!-- Puedes usar un ícono de Font Awesome o similar -->
+</button>
 
-    <div class="container">
-        <div class="header">
-            <h1 class="title">Chatbot de Películas</h1>
-            <p class="subtitle">Pregúntame sobre cualquier película</p>
-        </div>
-        
-        <div class="chatbox" id="chat-container">
-            <div class="message bot-message">
-                ¡Hola! Soy tu asistente de películas. Puedo ayudarte a encontrar películas, 
-                ver detalles, recomendaciones y más. ¿En qué puedo ayudarte hoy?
-            </div>
-        </div>
-        
-        <div class="input-container">
-            <input type="text" id="user-input" placeholder="Escribe tu pregunta aquí..." autocomplete="off">
-            <button id="send-button">Enviar</button>
-        </div>
+<!-- Sidebar del chatbot -->
+<div id="chat-sidebar" class="chat-sidebar">
+    <div class="chat-header">
+        <h3>Asistente de Películas</h3>
+        <button id="close-chat" class="close-button">&times;</button>
     </div>
-
-  
+    <div id="chat-container" class="chat-messages"></div>
+    <div class="chat-input-container">
+        <input type="text" id="user-input" placeholder="Pregunta sobre películas...">
+        <button id="send-button">Enviar</button>
+    </div>
+</div>

@@ -6,6 +6,8 @@
 @import url(./styles/resultados-busqueda.css);
 @import url(./styles/style-general.css);
 
+
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -35,14 +37,12 @@ body {
   .pelicula img:hover {
     transform: scale(1.1);
   }
-  
-
   .header {
     display: flex;
     justify-content: space-between;
     background-color: transparent;
     position: absolute;
-    z-index: 2;
+    z-index: 1000;
     width: 100%;
   }
 

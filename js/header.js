@@ -62,32 +62,33 @@ async function initHeader() {
     }
   }
 
-  // Función para configurar el menú hamburguesa
   function setupHamburgerMenu() {
     const menuToggle = document.getElementById('menu-toggle');
     const menuList = document.getElementById('menu-list');
-
+  
     if (menuToggle && menuList) {
-      menuToggle.addEventListener('mouseenter', () => {
-        menuList.classList.remove('hidden');
+      let menuOpen = false;
+  
+      menuToggle.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        menuList.classList.toggle('hidden', !menuOpen);
       });
-
-      menuToggle.addEventListener('mouseleave', () => {
-        menuList.classList.add('hidden');
-      });
-
-      menuList.addEventListener('mouseenter', () => {
-        menuList.classList.remove('hidden');
-      });
-
-      menuList.addEventListener('mouseleave', () => {
-        menuList.classList.add('hidden');
+  
+      // Cerrar el menú si se hace clic fuera de él
+      document.addEventListener('click', (event) => {
+        if (
+          !menuToggle.contains(event.target) &&
+          !menuList.contains(event.target)
+        ) {
+          menuList.classList.add('hidden');
+          menuOpen = false;
+        }
       });
     } else {
       console.error('❌ No se encontraron los elementos del menú hamburguesa');
     }
   }
-
+  
   // Función para obtener los géneros de la API
   async function fetchGenres() {
     const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?language=es-US';

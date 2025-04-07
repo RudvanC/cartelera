@@ -1,238 +1,256 @@
 @import url(./style-general.css);
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    html,
-    body {
-        overflow-x: hidden;
-        /* Desactiva el scroll horizontal */
-        width: 100vw;
-        /* Asegura que el ancho de la página no sea mayor al 100% */
-    }
+html,
+body {
+    overflow-x: hidden;
+    /* Desactiva el scroll horizontal */
+    width: 100vw;
+    /* Asegura que el ancho de la página no sea mayor al 100% */
+}
 
-    main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        text-align: center;
-        background-color: var(--color-fondo);
-        position: relative;
-    
-
-        h1 {
-            position: absolute;
-            z-index: 100;
-            display: flex;
-            justify-content: flex-start;
-            color: var(--color-titulos);
-            font-weight: bold;
-            width: 100%;
-            background-color: transparent;
-            padding: 15px;
-            font-family: var(--fuente-principal);
-        }
-    }
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--color-fondo);
+    position: relative;
 
 
-    a {
-        text-decoration: none;
-        font-family: var(--fuente-principal);
-        color: black;
-    }
-
-
-    /* Películas más populares */
-    .popular-movies {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin: 20px 20px;
-        height: 100%;
-    }
-
-    .popular-movie {
-        gap: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background: var(--color-principal);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        height: 100%;
-    }
-
-    .popular-image {
-        width: 100%;
-        height: 85%;
-        border-radius: 11px;
-    }
-
-    /* Contenedor del slider */
-    .slider-container {
-        position: relative;
-        width: 100%;
-        height: 500px;
-        /* Ajustamos la altura */
-        overflow: hidden;
-    }
-
-     /* Botones de navegación */
-     .slider-controls {
+    h1 {
         position: absolute;
-        top: 50%;
-        width: 100%;
+        z-index: 100;
         display: flex;
-        justify-content: space-between;
-        transform: translateY(-50%);
-    }
-
-
-    /* Slider */
-    #slider {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    /* Cada slide */
-    .slide {
-        min-width: 100%;
-        height: 500px;
-        /* Fijamos la altura */
-        position: relative;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    /* Imagen de fondo */
-    .slide-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* Ajusta la imagen sin deformarla */
-    }
-
-    /* Información sobre la imagen */
-    /* Información sobre la imagen (ocupa todo el slide) */
-    .slide-info {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* Ahora cubre todo el slide */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        /* Alinea el texto abajo */
-        padding: 40px 10px 20px 80px;
-        gap: 30px;
-        color: white;
-        background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-        /* Degradado */
-        box-sizing: border-box;
-
-        h3 {
-            width: 100%;
-            text-align: start;
-            font-size: 60px;
-        }
-
-        h4{
-            width: 100%;
-            text-align: start;
-            font-size: 30px;
-        }
-
-        p{
-            padding: 0px 60px 0px 0px;
-            width: 100%;
-            text-align: start;
-            font-size: 20px;
-            color: grey;
-        }
-    }
-
-    /* Botón Ver Más */
-    .btn {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 20px;
-        background: rgb(66, 61, 61);
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        width: 20%;
-        border-radius: 20px;
-        font-family: var(--fuente-principal);
+        justify-content: flex-start;
+        color: var(--color-titulos);
         font-weight: bold;
-
-    }
-
-   
-    .control-btn {
-        background-color: transparent; /* Fondo semitransparente */
-        color: white;
-        border: none;
-        font-size: 28px; /* Un poco más grande */
-        padding: 15px 20px; /* Más padding para mejor clickeabilidad */
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    /* Efecto al pasar el mouse */
-    .control-btn:hover {
+        width: 100%;
         background-color: transparent;
-        color: #fff;
-        transform: scale(1.2); /* Efecto de crecimiento */
+        padding: 15px;
+        font-family: var(--fuente-principal);
     }
-    
+}
 
 
-    /* Películas por género */
-    .genre-section {
-        margin-top: 40px;
+a {
+    text-decoration: none;
+    font-family: var(--fuente-principal);
+    color: black;
+}
+
+
+/* Películas más populares */
+.popular-movies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 20px 20px;
+    height: 100%;
+}
+
+.popular-movie {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-principal);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 100%;
+}
+
+.popular-image {
+    width: 100%;
+    height: 85%;
+    border-radius: 11px;
+}
+
+/* Contenedor del slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Ajustamos la altura */
+    overflow: hidden;
+}
+
+/* Botones de navegación */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+
+/* Slider */
+#slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide */
+.slide {
+    min-width: 100%;
+    height: 500px;
+    /* Fijamos la altura */
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Imagen de fondo */
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+}
+
+/* Información sobre la imagen */
+/* Información sobre la imagen (ocupa todo el slide) */
+.slide-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ahora cubre todo el slide */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Alinea el texto abajo */
+    padding: 40px 10px 20px 120px;
+    gap: 30px;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    /* Degradado */
+    box-sizing: border-box;
+
+    h3 {
         width: 100%;
-
-        h2 {
-            font-size: xxx-large;
-            padding: 30px;
-            text-align: center;
-            width: 100%;
-            color: white;
-            font-family: var(--fuente-principal);
-        }
-
-        p{
-            color: white;
-        }
-    }
-    
-
-    .genre-movies {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
+        text-align: start;
+        font-size: 60px;
     }
 
-    .genre-movie {
-        width: 200px;
+    h4 {
+        width: 100%;
+        text-align: start;
+        font-size: 30px;
+    }
+
+    p {
+        padding: 0px 60px 0px 0px;
+        width: 100%;
+        text-align: start;
+        font-size: 20px;
+        color: grey;
+    }
+}
+
+/* Botón Ver Más */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: rgb(66, 61, 61);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 20%;
+    border-radius: 20px;
+    font-family: var(--fuente-principal);
+    font-weight: bold;
+
+}
+
+
+.control-btn {
+    background-color: transparent;
+    /* Fondo semitransparente */
+    color: white;
+    border: none;
+    font-size: 28px;
+    /* Un poco más grande */
+    padding: 15px 20px;
+    /* Más padding para mejor clickeabilidad */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el mouse */
+.control-btn:hover {
+    background-color: transparent;
+    color: #fff;
+    transform: scale(1.2);
+    /* Efecto de crecimiento */
+}
+
+
+
+/* Películas por género */
+.genre-section {
+    margin-top: 40px;
+    width: 100%;
+
+    h2 {
+        font-size: xxx-large;
+        padding: 30px;
         text-align: center;
-
-        h3{
-            color: white;
-        }
-    }
-
-    .genre-movie img {
         width: 100%;
-        border-radius: 10px;
+        color: white;
+        font-family: var(--fuente-principal);
     }
 
-    
+    p {
+        color: white;
+    }
+}
+
+
+.genre-movies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.genre-movie {
+    width: 200px;
+    text-align: center;
+
+    h3 {
+        color: white;
+    }
+}
+
+.genre-movie img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.arrows {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 30px;
+
+    i {
+        font-size: 30px;
+        border: 3px solid;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}

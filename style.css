@@ -51,3 +51,21 @@ body {
   #header-content{
     display: flex;
   }
+
+  @media (width <= 768px) {
+   .slide-info{
+
+    h3{
+      
+      font-size: 1.5rem;
+    }
+
+    h4{
+      font-size: 1.2rem;
+    }
+
+    p{
+      font-size: 1rem;
+    }
+   }
+  }

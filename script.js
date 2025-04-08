@@ -108,3 +108,27 @@ window.addEventListener('scroll', () => {
     div.style.backgroundColor = 'transparent'; // Color original
   }
 });
+
+// Define una función para cambiar el número de caracteres mostrados en función del tamaño de la ventana
+function adjustOverviewLength() {
+  const overviewElements = document.querySelectorAll('.slide-info p');
+
+  // Define la longitud máxima de caracteres para pantallas grandes y pequeñas
+  const maxLengthLarge = 1000;
+  const maxLengthSmall = 300;
+
+  // Obtén el tamaño de la ventana
+  const isSmallScreen = window.innerWidth < 768;  // Esto lo puedes ajustar a tu preferencia
+
+  // Ajusta el contenido de acuerdo con el tamaño de la pantalla
+  overviewElements.forEach(element => {
+      const originalText = element.textContent || element.innerText;
+      const maxLength = isSmallScreen ? maxLengthSmall : maxLengthLarge;
+
+      element.textContent = originalText.length > maxLength ? originalText.substring(0, maxLength) + '...' : originalText;
+  });
+}
+
+// Llama a la función cuando se cargue la página o cuando se cambie el tamaño de la ventana
+window.addEventListener('load', adjustOverviewLength);
+window.addEventListener('resize', adjustOverviewLength);

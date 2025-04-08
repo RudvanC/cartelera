@@ -37,6 +37,7 @@ body {
   .pelicula img:hover {
     transform: scale(1.1);
   }
+
   .header {
     display: flex;
     justify-content: space-between;
@@ -44,13 +45,20 @@ body {
     position: absolute;
     z-index: 1000;
     width: 100%;
+    flex-wrap: wrap;
   }
 
   @media (max-width: 768px) {
     .header {
       background-color: black;
       position: fixed;
-    }
+               }
+    header {
+      height: 75px;
+      padding: 0%;
+      width: 100%;
+    }           
+
   }
 
   #header-content{

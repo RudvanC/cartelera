@@ -34,6 +34,7 @@ nav {
     transition: border-color 0.3s ease;
 }
 
+
 .search-input:focus {
     border-color: #007bff;
 }
@@ -63,5 +64,19 @@ nav {
     .search-container {
         margin: 1rem 0;
         max-width: 100%;
+        margin-top: 5px;
+        width: 100%;
+        justify-content: center;
+        align-self: center;
     }
+
+    .search-input {
+        width: 150px;
+            
+ }
+
+ #search-container {
+    width: 100%;
+    
+ }
 }

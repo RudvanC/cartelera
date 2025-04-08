@@ -60,14 +60,13 @@ window.addEventListener("DOMContentLoaded", () => {
     loadScript("./js/movie-chatbot.js", () => {
       console.log("✅ movie-chatbot.js cargado");
       // Carga el script que inicializa la interfaz del chatbot
-      loadScript("./chatbot-busqueda.js", () => {
-        console.log("✅ chatbot-busqueda.js cargado");
+    
         // En este punto ambos scripts deberían estar cargados
         // Si hay una función de inicialización específica, llámala aquí
         if (typeof initChatbot === "function") {
           initChatbot();
         }
-      });
+      
     });
   });
 
@@ -96,4 +95,16 @@ window.addEventListener("DOMContentLoaded", () => {
       if (typeof initSearchBar === "function") initSearchBar();
     });
   });
+});
+
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const div = document.querySelector('.header');
+
+  if (scrollY > 100) {
+    div.style.backgroundColor = 'black';
+  } else {
+    div.style.backgroundColor = 'transparent'; // Color original
+  }
 });

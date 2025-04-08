@@ -8,6 +8,7 @@
 
 
 
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -42,9 +43,10 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     width: 100%;
+    transition: background-color 0.4s ease;
     flex-wrap: wrap;
   }
 
@@ -63,4 +65,22 @@ body {
 
   #header-content{
     display: flex;
+  }
+
+  @media (width <= 768px) {
+   .slide-info{
+
+    h3{
+      
+      font-size: 1.5rem;
+    }
+
+    h4{
+      font-size: 1.2rem;
+    }
+
+    p{
+      font-size: 1rem;
+    }
+   }
   }

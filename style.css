@@ -46,6 +46,13 @@ body {
     width: 100%;
   }
 
+  @media (max-width: 768px) {
+    .header {
+      background-color: black;
+      position: fixed;
+    }
+  }
+
   #header-content{
     display: flex;
   }

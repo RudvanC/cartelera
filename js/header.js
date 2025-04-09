@@ -18,7 +18,7 @@ async function initHeader() {
       if (targetElement) {
         event.preventDefault();
         const offset = targetElement.getBoundingClientRect().top + window.scrollY;
-        const headerHeight = window.innerWidth <= 768 ? 215 : 100;
+        const headerHeight = window.innerWidth <= 768 ? 215 : 285; // Ajustar según el tamaño de la pantalla
         window.scrollTo({ top: offset - headerHeight, behavior: 'smooth' });
       }
     }

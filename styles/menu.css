@@ -9,13 +9,14 @@
     background: transparent;
     color: white;
     border: none;
-    font-size: 1rem;
+    font-size: 1.3rem;
     cursor: pointer;
     padding: 0.5rem;
   }
 
   .menu-toggle:hover {
-    color: red;
+    color: #097246;
+    ;
   }
   
   .menu-list {
@@ -33,7 +34,7 @@
   }
   
   .menu-list li {
-    border-bottom: 1px solid #e4bebe;
+    border-bottom: 1px solid #8ac99a;
   }
   
   .menu-list li:last-child {
@@ -49,7 +50,7 @@
   }
   
   .menu-list a:hover {
-    background-color: #cc3e3e;
+    background-color: #0cd883;
   }
   
   .hidden {

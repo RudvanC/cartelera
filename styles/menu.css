@@ -11,12 +11,14 @@
     color: var(--color-terciario);
     border: none;
     font-size: 1.3rem;
+    font-size: 1.3rem;
     cursor: pointer;
     padding: 0.5rem;
   }
 
   .menu-toggle:hover {
-    color: var(--blanco);
+    color: #097246;
+    ;
   }
   
   .menu-list {
@@ -35,7 +37,7 @@
   }
   
   .menu-list li {
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: 1px solid #8ac99a;
   }
   
   .menu-list li:last-child {
@@ -52,8 +54,7 @@
   }
   
   .menu-list a:hover {
-    background-color: var(--color-accent);
-    color: var(--color-terciario);
+    background-color: #0cd883;
   }
   
   .hidden {

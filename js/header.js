@@ -4,7 +4,7 @@ export async function initHeader() {
   setupHamburgerMenu();
   await loadGenresIntoMenu();
 
-  // Scroll suave global para todos los enlaces a géneros
+  // Hace un scroll suave al hacer clic en los enlaces del menú
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href^="#genre-"]');
     if (link) {

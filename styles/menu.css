@@ -15,7 +15,7 @@
   }
 
   .menu-toggle:hover {
-    color: var(--blanco);
+    color: red;
   }
   
   .menu-list {
@@ -33,7 +33,7 @@
   }
   
   .menu-list li {
-    border-bottom: 1px solid var(--color-accent);
+    border-bottom: 1px solid #e4bebe;
   }
   
   .menu-list li:last-child {
@@ -49,8 +49,7 @@
   }
   
   .menu-list a:hover {
-    background-color: var(--color-accent);
-    color: var(--color-terciario);
+    background-color: #cc3e3e;
   }
   
   .hidden {

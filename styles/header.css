@@ -12,7 +12,7 @@ header {
 }
 
 .logo {
-    height: 185px; /* Ajusta el tamaño del logo */
+
     height: 185px; /* Ajusta el tamaño del logo */
     width: auto; /* Mantén las proporciones de la imagen */
     filter: drop-shadow(0 0 5px var(--color-terciario));

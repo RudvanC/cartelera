@@ -39,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Otros componentes
   includeHTML("#search-container", "nav.html");
+  includeHTML("#favoritos", "favoritos.html");
   includeHTML("footer", "footer.html");
 
 

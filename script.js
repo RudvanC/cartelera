@@ -42,6 +42,9 @@ function retryFunction(fn, selector, attempts = 15, delay = 500) {
   }, delay);
 }
 
+// Importar el módulo CineBot
+import { loadCinebot } from './js/cinebot-loader.js';
+
 // Esperar a que el DOM esté listo
 window.addEventListener("DOMContentLoaded", () => {
   // Cargar componentes de forma dinámica
@@ -53,11 +56,11 @@ window.addEventListener("DOMContentLoaded", () => {
   includeHTML("#search-container", "nav.html");
   includeHTML("footer", "footer.html");
   
-  // Carga el chatbot y su script
-  includeHTML("#container", "chatbot.html", () => {
-    console.log("✅ chatbot.html cargado");
-    // Carga el script del chatbot
-   
+  // Cargar el componente CineBot
+  loadCinebot().then(() => {
+    console.log("✅ CineBot cargado correctamente");
+  }).catch(error => {
+    console.error("❌ Error al cargar CineBot:", error);
   });
 
   includeHTML("main", "main.html", () => {
@@ -86,7 +89,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
 
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;

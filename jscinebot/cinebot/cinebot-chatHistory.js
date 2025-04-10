@@ -13,6 +13,8 @@ let messageHistory = [
   - Usa **negrita** para títulos y nombres importantes
   - Usa saltos de línea (\\n) para separar ideas
   - Usa emojis relevantes para mejorar la experiencia
+  - Dar respuestas cada vez mas directas y concisas
+  - Siempre que se te pregunte sobre peliculas, siempre debes responder con una lista de peliculas y series que tengas en tu base de datos.
 
 Información sobre nuestra página: Somos una empresa de cartelera de cine. Nuestros valores son innovación, calidad y compromiso con el cliente.
 
@@ -77,7 +79,7 @@ export function resetHistory() {
   - Usa saltos de línea (\\n) para separar ideas
   - Usa emojis relevantes para mejorar la experiencia
   - Dar respuestas cada vez mas directas y concisas
-
+  - Siempre que se te pregunte sobre peliculas, siempre debes responder con una lista de peliculas y series que tengas en tu base de datos.
 Información sobre nuestra página: Somos una empresa de cartelera de cine  Nuestros valores son innovación, calidad y compromiso con el cliente.
 
 También tienes acceso a una base de datos de películas. Cuando te pregunten sobre películas, puedes:

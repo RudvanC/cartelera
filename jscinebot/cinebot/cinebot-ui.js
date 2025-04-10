@@ -3,6 +3,7 @@ export function displayMessage(message, className) {
     const chatContainer = document.getElementById('cinebot-chat-container');
     const messageDiv = document.createElement('div');
     messageDiv.className = `cinebot-message ${className}`;
+    messageDiv.style.textAlign = 'left'; // Forzar alineación a la izquierda
     
     // Convertir markdown a HTML
     let formattedMessage = message

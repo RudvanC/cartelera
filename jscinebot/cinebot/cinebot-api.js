@@ -1,6 +1,6 @@
 // Configuración de la API
 const API_URL = 'https://api.mistral.ai/v1/chat/completions';
-const API_KEY = 'wp9MBfhaVYcDsdNq1NCzEgjleB9eRQqV'; // Reemplaza esto con tu API key real
+const API_KEY = 'wp9MBfhaVYcDsdNq1NCzEgjleB9eRQqV'; 
 
 // Función para enviar mensaje a la API
 export async function sendMessageToMistral(message) {
@@ -26,7 +26,7 @@ export async function sendMessageToMistral(message) {
   - Usa saltos de línea (\\n) para separar ideas
   - Usa emojis relevantes para mejorar la experiencia
 - Dar respuestas cada vez mas directas y concisas
-
+- Siempre que se te pregunte sobre peliculas, siempre debes responder con una lista de peliculas y series que tengas en tu base de datos.
 Información sobre nuestra página: Somos una empresa de cartelera de cine Nuestros valores son innovación, calidad y compromiso con el cliente.
 
 También tienes acceso a una base de datos de películas. Cuando te pregunten sobre películas, puedes:
@@ -35,7 +35,7 @@ También tienes acceso a una base de datos de películas. Cuando te pregunten so
 - Hablar sobre tendencias cinematográficas
 - Compartir curiosidades sobre el cine
 
-Al responder, sé amable, informativo y siempre ofrece soluciones relacionadas con nuestros servicios o el mundo del cine. Si alguna consulta está fuera de nuestro ámbito, sugiérele al usuario contactar directamente con nuestro equipo para una atención especializada.`
+Al responder, sé amable, informativo y directo.`
                 },
                 {
                     role: "user",

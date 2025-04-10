@@ -2,8 +2,11 @@
 // Importaciones de módulos
 // ========================================================================================================================
 import { initHeader } from './js/header.js';
+// El módulo barra-busqueda.js maneja la funcionalidad de búsqueda
 import { initSearchBar } from './js/barra-busqueda.js';
+// El módulo pelis-populares.js maneja la sección de películas populares
 import { initPopularMovies, fetchPopularMovies } from './js/pelis-populares.js';
+// El módulo pelis-genero.js maneja la sección de películas por género
 import { initGenreMovies, renderGenresSections } from './js/pelis-genero.js';
 import { loadCinebot } from './js/cinebot-loader.js';
 
@@ -12,14 +15,18 @@ import { loadCinebot } from './js/cinebot-loader.js';
 // Carga dinámica de HTML
 // ========================================================================================================================
 function includeHTML(element, file, callback) {
+  // Hacemos una petición para obtener el archivo HTML
   fetch(`./components/${file}`)
     .then(response => {
+      // Verificamos si la respuesta es exitosa
       if (!response.ok) throw new Error(`Error ${response.status}`);
       return response.text();
     })
     .then(data => {
+      // Buscamos el elemento donde insertaremos el contenido
       const targetElement = document.querySelector(element);
       if (targetElement) {
+        // Insertamos el contenido HTML
         targetElement.innerHTML = data;
         if (callback) callback(); // Ejecutar callback si existe
       } else {

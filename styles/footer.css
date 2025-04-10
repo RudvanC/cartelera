@@ -1,45 +1,47 @@
 @import url(./style-general.css);
 
 /* General footer styling */
-footer {
-    background-color: #222;
-    color: #fff;
+#footer {
+    background-color: var(--color-principal);
+    color: var(--color-terciario);
     text-align: center;
     padding: 20px 10px;
-    font-family: Arial, sans-serif;
+    font-family: var(--fuente-principal);
     font-size: 14px;
+    border-top: 2px solid var(--color-terciario);
 }
 
 /* Social media links */
-footer .social-media a {
-    color: #fff;
+#footer .social-media a {
+    color: var(--blanco);
     text-decoration: none;
     margin: 0 5px;
     transition: color 0.3s ease;
 }
 
-footer .social-media a:hover {
-    color: #f39c12;
+#footer .social-media a:hover {
+    color: var(--color-terciario);
 }
 
 /* Contact section */
-footer .contact a {
-    color: #f39c12;
+#footer .contact a {
+    color: var(--color-terciario);
     text-decoration: none;
 }
 
-footer .contact a:hover {
+#footer .contact a:hover {
     text-decoration: underline;
+    color: var(--blanco);
 }
 
 /* Privacy policy link */
-footer .privacy a {
-    color: #fff;
+#footer .privacy a {
+    color: var(--blanco);
     text-decoration: none;
     font-weight: bold;
 }
 
-footer .privacy a:hover {
-    color: #f39c12;
+#footer .privacy a:hover {
+    color: var(--color-terciario);
     text-decoration: underline;
 }

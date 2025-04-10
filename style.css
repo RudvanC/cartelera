@@ -12,8 +12,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #141414;
-    color: white;
+    background-color: #2B3331;
+    color: #00F5C8;
   }
   
   
@@ -37,6 +37,7 @@ body {
   
   .pelicula img:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 15px #22C9AB;
   }
 
   .header {
@@ -48,11 +49,12 @@ body {
     width: 100%;
     transition: background-color 0.4s ease;
     flex-wrap: wrap;
+    border-bottom: 2px solid var(--color-terciario);
   }
 
   @media (max-width: 768px) {
     .header {
-      background-color: black;
+      background-color: #324A45;
       position: fixed;
                }
     header {
@@ -83,4 +85,12 @@ body {
       font-size: 1rem;
     }
    }
+  }
+
+  footer{
+    margin-top: 0px;
+  }
+
+  #genres :nth-last-child(){
+    margin-bottom: 10px;
   }

@@ -75,6 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Si haces scroll, el fondo del .header cambia a negro.
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;
   const div = document.querySelector('.header');

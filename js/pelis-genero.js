@@ -1,11 +1,13 @@
-import { API_CONFIG } from '../config.js';
+import { API_CONFIG } from '../config.js'; // Se importa la clave de la API y la URL base para las imágenes.
 
+
+// Cuando el documento esté listo, se llama a initGenreMovies() para que arranque el proceso de cargar las secciones por género.
 document.addEventListener("DOMContentLoaded", () => {
   initGenreMovies();
 });
 
 async function fetchGenres() {
-  const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?language=es-US';
+  const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?language=es-US'; // Llama a la API de TMDB para obtener los géneros de películas y devuelve un array.
   try {
     const response = await fetch(GENRES_URL, { headers: API_CONFIG.HEADERS });
     if (!response.ok) throw new Error(`Error: ${response.status}`);
@@ -17,6 +19,7 @@ async function fetchGenres() {
   }
 }
 
+// 
 async function fetchMoviesByGenre(genreId) {
   const DISCOVER_URL = `https://api.themoviedb.org/3/discover/movie?with_genres=${genreId}&language=es-US&page=1`;
   try {

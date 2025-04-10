@@ -1,3 +1,8 @@
+import { initHeader } from './js/header.js';
+import { initSearchBar } from './js/barra-busqueda.js';
+import { initPopularMovies, fetchPopularMovies } from './js/pelis-populares.js';
+import { initGenreMovies, renderGenresSections } from './js/pelis-genero.js';
+
 // Función para incluir contenido HTML de forma dinámica
 function includeHTML(element, file, callback) {
   fetch(`./components/${file}`)
@@ -15,15 +20,6 @@ function includeHTML(element, file, callback) {
       }
     })
     .catch(error => console.error(`❌ Error cargando ${file}:`, error));
-}
-
-// Función para cargar scripts dinámicamente
-function loadScript(src, callback) {
-  const script = document.createElement("script");
-  script.src = src;
-  script.onload = callback;
-  script.onerror = () => console.error(`❌ Error cargando ${src}`);
-  document.body.appendChild(script);
 }
 
 // Función para esperar que un elemento exista antes de ejecutar una función
@@ -54,6 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   
   includeHTML("#search-container", "nav.html");
+  includeHTML("#favoritos", "favoritos.html");
   includeHTML("footer", "footer.html");
   
   // Cargar el componente CineBot
@@ -63,30 +60,18 @@ window.addEventListener("DOMContentLoaded", () => {
     console.error("❌ Error al cargar CineBot:", error);
   });
 
+  
   includeHTML("main", "main.html", () => {
     console.log("✅ main.html cargado");
 
-    // Ejecutar funciones de inicialización si están definidas
-    if (typeof initSearchBar === "function") initSearchBar();
-    if (typeof initPopularMovies === "function") initPopularMovies();
-    if (typeof initGenreMovies === "function") initGenreMovies();
+    // Ejecutar funciones de inicialización
+    initSearchBar();
+    initPopularMovies();
+    initGenreMovies();
 
-    // Cargar scripts dinámicamente
-    loadScript("./js/pelis-populares.js", () => {
-      console.log("✅ pelis-populares.js cargado");
-      retryFunction(fetchPopularMovies, "#slider");
-    });
-
-    loadScript("./js/pelis-genero.js", () => {
-      console.log("✅ pelis-genero.js cargado");
-      retryFunction(renderGenresSections, "#genres");
-    });
-
-    // Opcional: Cargar barra de búsqueda si es necesaria
-    loadScript("./js/barra-busqueda.js", () => {
-      console.log("✅ barra-busqueda.js cargado");
-      if (typeof initSearchBar === "function") initSearchBar();
-    });
+    // Esperar a que los elementos estén disponibles
+    retryFunction(fetchPopularMovies, "#slider");
+    retryFunction(renderGenresSections, "#genres");
   });
 });
 

@@ -42,7 +42,7 @@ main {
 a {
     text-decoration: none;
     font-family: var(--fuente-principal);
-    color: black;
+    color: var(--blanco);
 }
 
 
@@ -132,8 +132,8 @@ a {
     /* Alinea el texto abajo */
     padding: 40px 10px 20px 120px;
     gap: 30px;
-    color: white;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    color: var(--color-titulos);
+    background: linear-gradient(to top, var(--color-principal), rgba(50, 74, 69, 0.5), rgba(0, 0, 0, 0));
     /* Degradado */
     box-sizing: border-box;
 
@@ -141,12 +141,14 @@ a {
         width: 100%;
         text-align: start;
         font-size: 60px;
+        color: var(--color-terciario);
     }
 
     h4 {
         width: 100%;
         text-align: start;
         font-size: 30px;
+        color: var(--blanco);
     }
 
     p {
@@ -154,7 +156,7 @@ a {
         width: 100%;
         text-align: start;
         font-size: 20px;
-        color: grey;
+        color: var(--color-highlight);
     }
 }
 
@@ -163,8 +165,8 @@ a {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background: rgb(66, 61, 61);
-    color: white;
+    background: var(--color-accent);
+    color: var(--color-titulos);
     text-decoration: none;
     border-radius: 5px;
     width: 20%;
@@ -208,12 +210,12 @@ a {
         padding: 30px;
         text-align: center;
         width: 100%;
-        color: white;
+        color: var(--color-terciario);
         font-family: var(--fuente-principal);
     }
 
     p {
-        color: white;
+        color: var(--blanco);
     }
 }
 
@@ -225,12 +227,16 @@ a {
     justify-content: center;
 }
 
+.genre-movies > :last-child {
+    padding-bottom: 30px;
+}
+
 .genre-movie {
     width: 200px;
     text-align: center;
 
     h3 {
-        color: white;
+        color: var(--color-terciario);
     }
 }
 

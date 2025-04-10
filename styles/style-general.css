@@ -1,11 +1,13 @@
 :root{
-    --color-principal:black;
-    --color-fondo: #0e0d0e;
-    --color-terciario: #0cd883;
-    --blanco:#bba8a8;
-    --color-titulos:white;
+    --color-principal:#324A45;
+    --color-fondo: #2B3331;
+    --color-terciario: #00F5C8;
+    --blanco:#22C9AB;
+    --color-titulos:#00F5C8;
     --fuente-principal: 'Montserrat', sans-serif;
     --tamaño-fuente: 16px;
+    --color-accent: #35A18D;
+    --color-highlight: #3B756B;
   }
 
 * {
@@ -16,9 +18,17 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../assets/fonts/Montserrat/Montserrat-Medium.woff2') format('woff2');
-    font-weight: normal;
+    src: url('../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
     font-display: swap;
 }
 

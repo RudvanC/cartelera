@@ -63,7 +63,7 @@
 
 .movie-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px var(--color-terciario);
 }
 
 .movie-card img {
@@ -82,7 +82,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    background: linear-gradient(to top, var(--color-principal), transparent);
     padding: 20px;
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -95,7 +95,7 @@
 .movie-info h3 {
     margin: 0;
     font-size: 1.2em;
-    color: var(--color-titulos);
+    color: var(--color-terciario);
     margin-bottom: 10px;
     opacity: 0;
     transform: translateY(20px);
@@ -104,7 +104,7 @@
 
 .movie-info p {
     margin: 8px 0;
-    color: var(--color-titulos);
+    color: var(--blanco);
     font-size: 0.9em;
     opacity: 0;
     transform: translateY(20px);

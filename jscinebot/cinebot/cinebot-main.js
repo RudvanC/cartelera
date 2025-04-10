@@ -4,9 +4,10 @@ import { sendMessageToMistral } from './cinebot-api.js';
 
 // Variables para el widget
 let isChatVisible = false;
-const chatContainer = document.getElementById('cinebot-chat');
-const toggleButton = document.getElementById('cinebot-toggle-button');
-const minimizeButton = document.getElementById('cinebot-minimize');
+let chatContainer;
+let toggleButton;
+let minimizeButton;
+let userInput;
 
 // Función para mostrar/ocultar el chat
 function toggleChat() {
@@ -24,7 +25,10 @@ function minimizeChat() {
 
 // Función principal para enviar mensaje
 async function sendCinebotMessage() {
-    const userInput = document.getElementById('cinebot-user-input');
+    if (!userInput) {
+        userInput = document.getElementById('cinebot-user-input');
+    }
+    
     const message = userInput.value.trim();
     
     if (!message) return;
@@ -70,44 +74,62 @@ function clearCinebotChat() {
     saveConversation();
 }
 
-// Cargar la conversación al iniciar
-document.addEventListener('DOMContentLoaded', () => {
-    // Configurar eventos del widget
-    if (toggleButton) {
-        toggleButton.addEventListener('click', toggleChat);
+// Inicializar el CineBot
+export function init() {
+    console.log('Inicializando CineBot...');
+    
+    // Obtener elementos del DOM
+    chatContainer = document.getElementById('cinebot-chat');
+    toggleButton = document.getElementById('cinebot-toggle-button');
+    minimizeButton = document.getElementById('cinebot-minimize');
+    userInput = document.getElementById('cinebot-user-input');
+    
+    if (!chatContainer || !toggleButton || !minimizeButton || !userInput) {
+        console.error('No se pudieron encontrar los elementos del DOM para CineBot');
+        return;
     }
     
-    if (minimizeButton) {
-        minimizeButton.addEventListener('click', minimizeChat);
-    }
-
+    // Configurar eventos del widget
+    toggleButton.addEventListener('click', toggleChat);
+    minimizeButton.addEventListener('click', minimizeChat);
+    
+    // Añadir el evento de tecla Enter al input
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendCinebotMessage();
+        }
+    });
+    
     const savedHistory = loadConversation();
-    if (savedHistory) {
-        // Mostrar todos los mensajes excepto el del sistema
+    if (savedHistory && savedHistory.length > 1) {
+        // Si hay historial guardado (más que solo el mensaje del sistema), lo mostramos
         savedHistory.forEach(msg => {
             if (msg.role !== 'system') {
                 displayMessage(msg.content, msg.role === 'user' ? 'cinebot-user-message' : 'cinebot-bot-message');
             }
         });
     } else {
+        // Si no hay historial o solo está el mensaje del sistema, mostramos el mensaje de bienvenida
+        clearChatContainer(); // Limpiamos por si acaso
+        resetHistory(); // Aseguramos que el historial está limpio
         // Añadir el mensaje de bienvenida al historial
         addMessage('assistant', '¡Hola! 👋 Soy CineBot, tu asistente virtual. ¿En qué puedo ayudarte hoy? Puedo hablar sobre cine o recomendarte algunas películas interesantes 🎬');
         // Mostrar el mensaje de bienvenida
         displayMessage('¡Hola! 👋 Soy CineBot, tu asistente virtual. ¿En qué puedo ayudarte hoy? Puedo hablar sobre cine o recomendarte algunas películas interesantes 🎬', 'cinebot-bot-message');
         saveConversation();
     }
+    
+    console.log('CineBot inicializado correctamente');
+}
 
-    // Añadir el evento de tecla Enter al input
-    const userInput = document.getElementById('cinebot-user-input');
-    if (userInput) {
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendCinebotMessage();
-            }
-        });
-    }
-});
-
-// Hacer las funciones disponibles globalmente
+// Hacer las funciones disponibles globalmente para poder ser usadas desde HTML
 window.sendCinebotMessage = sendCinebotMessage;
-window.clearCinebotChat = clearCinebotChat; 
+window.clearCinebotChat = clearCinebotChat;
+
+// Exportar las funciones para uso modular
+export { 
+    sendCinebotMessage,
+    clearCinebotChat,
+    toggleChat,
+    minimizeChat
+}; 

@@ -50,6 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   
   includeHTML("#search-container", "nav.html");
+  includeHTML("#favoritos", "favoritos.html");
   includeHTML("footer", "footer.html");
   
   // Cargar el componente CineBot
@@ -59,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
     console.error("❌ Error al cargar CineBot:", error);
   });
 
+  
   includeHTML("main", "main.html", () => {
     console.log("✅ main.html cargado");
 

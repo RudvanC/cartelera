@@ -53,6 +53,7 @@ function initGenreMovies() {
             <img src="${IMAGE_BASE_URL}${movie.poster_path}" alt="${movie.title}">
             <h3>${movie.title}</h3>
             <p>⭐ ${movie.vote_average.toFixed(1)}</p>
+            
           </a>
         `;
         container.appendChild(movieElement);

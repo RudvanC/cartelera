@@ -27,21 +27,24 @@ nav {
 .search-input {
     width: 100%;
     padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-accent);
     border-radius: 20px;
     font-size: 0.9rem;
     outline: none;
     transition: border-color 0.3s ease;
+    background-color: var(--color-principal);
+    color: var(--color-terciario);
 }
 
 
 .search-input:focus {
-    border-color: red;
+    border-color: var(--color-terciario);
+    box-shadow: 0 0 5px var(--color-terciario);
 }
 
 .search-button {
-    background-color: var(--color-terciario);
-    color: white;
+    background-color: var(--color-accent);
+    color: var(--color-terciario);
     border: none;
     border-radius: 20px;
     padding: 0.5rem 1rem;
@@ -51,7 +54,8 @@ nav {
 }
 
 .search-button:hover {
-    background-color:  red
+    background-color: var(--color-terciario);
+    color: var(--color-principal);
 }
 
 /* Responsive design */

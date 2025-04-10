@@ -8,6 +8,7 @@ header {
     position: relative;
     z-index: 1000; /* Aseguramos que el header esté por encima de los resultados */
     height: 100px; /* Ajusta la altura del header */
+   
 }
 
 .logo {

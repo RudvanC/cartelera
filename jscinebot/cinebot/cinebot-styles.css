@@ -57,7 +57,6 @@ body {
     max-width: 80%;
     word-wrap: break-word;
     animation: fadeIn 0.3s ease;
-    text-align: left;
 }
 
 @keyframes fadeIn {
@@ -77,7 +76,6 @@ body {
     color: white;
     margin-right: auto;
     border-bottom-left-radius: 5px;
-    text-align: left;
 }
 
 .cinebot-input-area {
@@ -178,7 +176,7 @@ body {
 
 .cinebot-clear-button {
     padding: 12px;
-    background-color: #2a9d8f;
+    background-color: #e74c3c;
     color: white;
     border: none;
     border-radius: 25px;
@@ -208,7 +206,7 @@ body {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: var(--color-terciario);
+    background-color: #2a9d8f;
     color: white;
     border: none;
     cursor: pointer;
@@ -223,21 +221,21 @@ body {
 
 .cinebot-floating-button:hover {
     transform: scale(1.1);
-    background-color: #2a9d8f;
+    background-color: #238b7e;
 }
 
 .cinebot-wrapper {
     position: fixed;
     bottom: 90px;
     right: 20px;
-    width: 450px;
-    height: 800px;
+    width: 350px;
+    height: 500px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     border-radius: 15px;
     overflow: hidden;
     background-color: #ffffff;
     transition: all 0.3s ease;
-    z-index: 2000;
+    z-index: 999;
     display: none;
 }
 

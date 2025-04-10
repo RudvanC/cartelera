@@ -81,8 +81,10 @@ window.addEventListener('scroll', () => {
 
   if (scrollY > 100) {
     div.style.backgroundColor = 'black';
+    div.style.borderBottom = '2px solid #00F5C8';
   } else {
-    div.style.backgroundColor = 'transparent'; // Color original
+    div.style.backgroundColor = 'transparent';
+    div.style.borderBottom = '0px'; // Color original
   }
 });
 

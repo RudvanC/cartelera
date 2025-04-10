@@ -57,17 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
   includeHTML("#container", "chatbot.html", () => {
     console.log("✅ chatbot.html cargado");
     // Carga el script del chatbot
-    loadScript("./js/movie-chatbot.js", () => {
-      console.log("✅ movie-chatbot.js cargado");
-      // Carga el script que inicializa la interfaz del chatbot
-    
-        // En este punto ambos scripts deberían estar cargados
-        // Si hay una función de inicialización específica, llámala aquí
-        if (typeof initChatbot === "function") {
-          initChatbot();
-        }
-      
-    });
+   
   });
 
   includeHTML("main", "main.html", () => {

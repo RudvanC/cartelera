@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBot Widget</title>
+    <link rel="stylesheet" href="jscinebot/cinebot/cinebot-styles.css">
+</head>
+<body>
+    <!-- Botón flotante para abrir el chat -->
+    <button class="cinebot-floating-button" id="cinebot-toggle-button">
+        🎬
+    </button>
+
+    <!-- Contenedor del chat -->
+    <div class="cinebot-wrapper" id="cinebot-chat">
+        <div class="cinebot-header" id="cinebot-minimize">
+            CineBot
+        </div>
+        <div id="cinebot-chat-container">
+            
+        </div>
+        <div class="cinebot-input-area">
+            <input type="text" id="cinebot-user-input" placeholder="Escribe tu mensaje...">
+            <button class="cinebot-clear-button" onclick="clearCinebotChat()" title="Limpiar chat">
+                🗑️
+            </button>
+            <button class="cinebot-button" onclick="sendCinebotMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Añadimos Axios para poder hacer peticiones HTTP -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Cargamos los módulos principales -->
+    <script type="module" src="jscinebot/cinebot/cinebot-main.js"></script>
+</body>
+</html> 

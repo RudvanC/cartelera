@@ -99,11 +99,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-<<<<<<< HEAD
 // Si haces scroll, el fondo del .header cambia a negro.
-=======
-// Este evento controla el cambio de estilo del header al hacer scroll
->>>>>>> dev
 window.addEventListener('scroll', () => {
   const scrollY = window.scrollY;                      // Posición actual del scroll
   const div = document.querySelector('.header');       // Elemento del header

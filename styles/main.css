@@ -133,7 +133,7 @@ a {
     padding: 40px 10px 20px 120px;
     gap: 30px;
     color: var(--color-titulos);
-    background: linear-gradient(to top, var(--color-principal), rgba(50, 74, 69, 0.5), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, #293432, rgba(50, 74, 69, 0.5), rgba(0, 0, 0, 0));
     /* Degradado */
     box-sizing: border-box;
 
@@ -156,7 +156,7 @@ a {
         width: 100%;
         text-align: start;
         font-size: 20px;
-        color: var(--color-highlight);
+        color: #cac7d4;
     }
 }
 
@@ -236,13 +236,46 @@ a {
     text-align: center;
 
     h3 {
+        opacity: 0;
+        transform: translateY(10px);
         color: var(--color-terciario);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    p{
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
 
 .genre-movie img {
     width: 100%;
     border-radius: 10px;
+}
+
+.genre-movie img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px var(--color-terciario);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+   
+}
+
+.genre-movie:hover{
+
+
+    h3{
+        opacity: 1;
+        transform: translateY(0px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    p{
+        opacity: 1;
+        transform: translateY(0px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
 
@@ -252,11 +285,14 @@ a {
     justify-content: space-between;
     margin: 0px 30px;
 
-    i {
-        font-size: 30px;
-        border: 3px solid;
-        padding: 10px;
-        border-radius: 20px;
-        cursor: pointer;
-    }
+   
+        i {
+            font-size: 50px;
+            border: 3px solid;
+            padding: 150px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            opacity: 0;
+        }
+    
 }

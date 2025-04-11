@@ -1,7 +1,5 @@
-import { API_CONFIG } from '../config.js'; // Se importa la clave de la API y la URL base para las imágenes.
-
-
-// Cuando el documento esté listo, se llama a initGenreMovies() para que arranque el proceso de cargar las secciones por género.
+import { API_CONFIG } from '../config.js';
+import { movieLimit } from '../config.js';
 document.addEventListener("DOMContentLoaded", () => {
   initGenreMovies();
 });
@@ -56,7 +54,7 @@ function renderMovies(movies, container, limit = movies.length) {
 
 export async function renderGenresSections() {
   const genres = await fetchGenres();
-  const limitedGenres = genres.slice(0, 5);
+  const limitedGenres = genres.slice(0, movieLimit);
   const genresContainer = document.getElementById('genres');
 
   if (!genresContainer) {

@@ -230,14 +230,14 @@ body {
     position: fixed;
     bottom: 90px;
     right: 20px;
-    width: 350px;
-    height: 500px;
+    width: 450px;
+    height: 800px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     border-radius: 15px;
     overflow: hidden;
     background-color: #ffffff;
     transition: all 0.3s ease;
-    z-index: 999;
+    z-index: 2000;
     display: none;
 }
 

@@ -7,3 +7,5 @@ export const API_CONFIG = {
     IMAGE_BASE_URL: 'https://image.tmdb.org/t/p/w500',
     IMAGE_BASE_URL_LARGE: 'https://image.tmdb.org/t/p/w1280'
 }; 
+
+export const movieLimit = 7;

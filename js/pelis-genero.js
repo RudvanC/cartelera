@@ -1,5 +1,5 @@
 import { API_CONFIG } from '../config.js';
-
+import { movieLimit } from '../config.js';
 document.addEventListener("DOMContentLoaded", () => {
   initGenreMovies();
 });
@@ -53,7 +53,7 @@ function renderMovies(movies, container, limit = movies.length) {
 
 export async function renderGenresSections() {
   const genres = await fetchGenres();
-  const limitedGenres = genres.slice(0, 5);
+  const limitedGenres = genres.slice(0, movieLimit);
   const genresContainer = document.getElementById('genres');
 
   if (!genresContainer) {

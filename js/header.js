@@ -1,4 +1,5 @@
 import { API_CONFIG } from '../config.js';
+import { movieLimit } from '../config.js';
 
 export async function initHeader() {
   setupHamburgerMenu();
@@ -23,7 +24,7 @@ export async function initHeader() {
 async function loadGenresIntoMenu() {
   try {
     const genres = await fetchGenres();
-    const limitedGenres = genres.slice(0, 5);
+    const limitedGenres = genres.slice(0, movieLimit);
     const menuList = document.getElementById('menu-list');
     if (!menuList) {
       console.error('❌ No se encontró el elemento menu-list');

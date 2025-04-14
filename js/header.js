@@ -1,11 +1,11 @@
-import { API_CONFIG } from '../config.js';
-import { movieLimit } from '../config.js';
+import { API_CONFIG } from '../config.js';  // Contiene claves o cabeceras para hacer peticiones a la API
+import { movieLimit } from '../config.js'; // Limita la cantidad de géneros que se mostrarán en el menú.
 
-export async function initHeader() {
-  setupHamburgerMenu();
-  await loadGenresIntoMenu();
+export async function initHeader() {  // Esta funciín se llama desde script.js.
+  setupHamburgerMenu(); // Activa el menú hamburguesa.
+  await loadGenresIntoMenu(); // Carga los géneros en el menú.
 
-  // Hace un scroll suave al hacer clic en los enlaces del menú
+  // Hace un scroll suave al hacer clic en los enlaces del menú.
   document.addEventListener('click', (event) => {
     const link = event.target.closest('a[href^="#genre-"]');
     if (link) {

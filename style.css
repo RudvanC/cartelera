@@ -53,8 +53,9 @@ body {
 
   @media (max-width: 768px) {
     .header {
-      background-color: #324A45;
-      position: fixed;
+        padding-top: 10px;
+        background-color: var(--color-principal);
+
                }
     header {
       height: 75px;

@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function fetchGenres() {
+<<<<<<< HEAD
   const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?language=es-US';
+=======
+  const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?language=es-US'; // Llama a la API de TMDB para obtener los géneros de películas y devuelve un array.
+>>>>>>> leire
   try {
     const response = await fetch(GENRES_URL, { headers: API_CONFIG.HEADERS });
     if (!response.ok) throw new Error(`Error: ${response.status}`);
@@ -17,6 +21,10 @@ async function fetchGenres() {
   }
 }
 
+<<<<<<< HEAD
+=======
+// 
+>>>>>>> leire
 async function fetchMoviesByGenre(genreId) {
   const DISCOVER_URL = `https://api.themoviedb.org/3/discover/movie?with_genres=${genreId}&language=es-US&page=1`;
   try {

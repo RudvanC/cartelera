@@ -122,7 +122,7 @@ function adjustOverviewLength() {
 
   // Definimos los límites de caracteres según el tamaño de pantalla
   const maxLengthLarge = 1000;    // Máximo de caracteres en pantallas grandes
-  const maxLengthSmall = 300;     // Máximo de caracteres en pantallas pequeñas
+  const maxLengthSmall = 100;     // Máximo de caracteres en pantallas pequeñas
 
   // Verificamos si estamos en una pantalla pequeña (menos de 768px)
   const isSmallScreen = window.innerWidth < 768;

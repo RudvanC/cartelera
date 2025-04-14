@@ -9,10 +9,6 @@
     font-weight: 800;
     background: transparent;
     color: var(--color-terciario);
-<<<<<<< HEAD
-=======
-    color: var(--color-terciario);
->>>>>>> leire
     border: none;
     font-size: 1.3rem;
     font-size: 1.3rem;
@@ -29,10 +25,6 @@
     top: 100%;
     right: 0;
     background-color: var(--color-principal);
-<<<<<<< HEAD
-=======
-    background-color: var(--color-principal);
->>>>>>> leire
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     width: 200px;
@@ -54,10 +46,6 @@
     display: block;
     padding: 12px 16px;
     color: var(--blanco);
-<<<<<<< HEAD
-=======
-    color: var(--blanco);
->>>>>>> leire
     text-decoration: none;
     transition: background-color 0.2s;
   }

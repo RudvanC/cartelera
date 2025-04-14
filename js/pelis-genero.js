@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Función para obtener la lista de géneros de películas desde la API
 async function fetchGenres() {
   // URL para obtener la lista de géneros en español
+
   const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?language=es-US'; // Llama a la API de TMDB para obtener los géneros de películas y devuelve un array.
 
   try {

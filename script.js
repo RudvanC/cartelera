@@ -73,8 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   
   // Cargamos los componentes principales de la página
-  includeHTML("#search-container", "nav.html");        // Barra de navegación
-  includeHTML("#favoritos", "favoritos.html");         // Sección de favoritos
+  includeHTML("#search-container", "nav.html");        // Barra de navegación       // Sección de favoritos
   includeHTML("footer", "footer.html");                // Pie de página
   
   // Cargamos e inicializamos el CineBot (chatbot)
@@ -110,7 +109,7 @@ window.addEventListener('scroll', () => {
 
   // Cambiamos el estilo según la posición del scroll
   if (scrollY > 100) {
-    div.style.backgroundColor = 'black';               // Fondo negro cuando hacemos scroll
+    div.style.backgroundColor = '#324A45';               // Fondo negro cuando hacemos scroll
     div.style.borderBottom = '2px solid #00F5C8';     // Borde inferior con color accent
   } else {
     div.style.backgroundColor = 'transparent';         // Fondo transparente al inicio

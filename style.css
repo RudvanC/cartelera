@@ -49,13 +49,13 @@ body {
     width: 100%;
     transition: background-color 0.4s ease;
     flex-wrap: wrap;
-    border-bottom: 2px solid var(--color-terciario);
   }
 
   @media (max-width: 768px) {
     .header {
-      background-color: #324A45;
-      position: fixed;
+        padding-top: 10px;
+
+
                }
     header {
       height: 75px;

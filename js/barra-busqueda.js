@@ -1,8 +1,52 @@
 import { API_CONFIG } from '../config.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    initSearchBar();
-});
+export function initSearchBar() {
+    // Wait for the search container to be loaded
+    const searchContainer = document.querySelector('#search-container');
+    if (!searchContainer) {
+        console.error('Search container not found');
+        return;
+    }
+
+    const searchInput = searchContainer.querySelector('.search-input');
+    if (!searchInput) {
+        console.error('Search input not found');
+        return;
+    }
+
+    const searchButton = searchContainer.querySelector('.search-button');
+    const mainContent = document.querySelector('main');
+
+    let timeoutId = null;
+
+    // Event listeners
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim().length >= 3) {
+            e.preventDefault();
+            searchMovies(searchInput.value.trim()).then(movies => {
+                displaySearchResults(movies, searchInput, mainContent);
+            });
+        }
+    });
+
+    searchButton.addEventListener('click', async () => {
+        const query = searchInput.value.trim();
+        if (query.length >= 3) {
+            const movies = await searchMovies(query);
+            displaySearchResults(movies, searchInput, mainContent);
+        }
+    });
+
+    // Removemos el listener de 'input' anterior y lo reemplazamos por uno más simple
+    searchInput.addEventListener('input', (e) => {
+        if (!e.target.value.trim()) {
+            const searchResults = document.getElementById('search-results');
+            if (searchResults) {
+                searchResults.classList.remove('active');
+            }
+        }
+    });
+}
 
 async function searchMovies(query) {
     const options = {
@@ -76,44 +120,4 @@ function displaySearchResults(movies, searchInput, mainContent) {
             searchInput.value = '';
         });
     }
-}
-
-export function initSearchBar() {
-    const searchInput = document.querySelector('.search-input');
-    if (!searchInput) {
-        console.error('Search input not found');
-        return;
-    }
-    const searchButton = document.querySelector('.search-button');
-    const mainContent = document.querySelector('main');
-
-    let timeoutId = null;
-
-    // Event listeners
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' && searchInput.value.trim().length >= 3) {
-            e.preventDefault();
-            searchMovies(searchInput.value.trim()).then(movies => {
-                displaySearchResults(movies, searchInput, mainContent);
-            });
-        }
-    });
-
-    searchButton.addEventListener('click', async () => {
-        const query = searchInput.value.trim();
-        if (query.length >= 3) {
-            const movies = await searchMovies(query);
-            displaySearchResults(movies, searchInput, mainContent);
-        }
-    });
-
-    // Removemos el listener de 'input' anterior y lo reemplazamos por uno más simple
-    searchInput.addEventListener('input', (e) => {
-        if (!e.target.value.trim()) {
-            const searchResults = document.getElementById('search-results');
-            if (searchResults) {
-                searchResults.classList.remove('active');
-            }
-        }
-    });
 }

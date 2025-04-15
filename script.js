@@ -38,13 +38,14 @@ window.addEventListener("DOMContentLoaded", () => {
   includeHTML("header", "header.html", initHeader);
 
   // Otros componentes
-  includeHTML("#search-container", "nav.html");
+  includeHTML("#search-container", "nav.html", () => {
+    // Initialize search bar after nav.html is loaded
+    initSearchBar();
+  });
   includeHTML("footer", "footer.html");
-
 
   // Main + inicialización de funciones
   includeHTML("main", "main.html", () => {
-    initSearchBar();
     initPopularMovies();
     initGenreMovies();
 

@@ -49,9 +49,6 @@ window.addEventListener("DOMContentLoaded", () => {
     initPopularMovies();
     initGenreMovies();
 
-    // Esperar a que los elementos existan para ejecutar funciones que los necesitan
-    retryFunction(fetchPopularMovies, "#slider");
-    retryFunction(renderGenresSections, "#genres");
   });
 
   // CineBot

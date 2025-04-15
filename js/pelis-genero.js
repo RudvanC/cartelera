@@ -1,8 +1,5 @@
 import { API_CONFIG } from '../config.js';
 import { movieLimit } from '../config.js';
-document.addEventListener("DOMContentLoaded", () => {
-  initGenreMovies();
-});
 
 async function fetchGenres() {
   const GENRES_URL = 'https://api.themoviedb.org/3/genre/movie/list?language=es-US';
@@ -76,5 +73,20 @@ export async function renderGenresSections() {
 }
 
 export function initGenreMovies() {
+  // Wait for the main content to be loaded
+  const mainContent = document.querySelector('main');
+  if (!mainContent) {
+    console.error("❌ No se encontró el elemento main");
+    return;
+  }
+
+  // Create genres container if it doesn't exist
+  let genresContainer = document.getElementById('genres');
+  if (!genresContainer) {
+    genresContainer = document.createElement('div');
+    genresContainer.id = 'genres';
+    mainContent.appendChild(genresContainer);
+  }
+
   renderGenresSections();
 }
